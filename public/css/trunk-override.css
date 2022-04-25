@@ -1,0 +1,314 @@
+
+.burger {
+    position: absolute;
+    float: left;
+    padding: 0px;
+    top: 0px;
+    right: 0px;
+    left: auto;
+    width: 45px;
+    color: #FFF;
+    cursor: pointer;
+}
+
+header {
+    height: 45px;
+    position: relative;
+}
+
+header h1 {
+    line-height: 1.5;
+}
+
+
+/* ヘッダーセクション  ※ヘッダーとは関係ない */
+.header-section {
+    display: block;
+    margin: 0 auto;
+}
+
+header {
+    height: 45px;
+    z-index: 2;
+    background-color: #060a0c;
+
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    /* starting point */
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -ms-transform: translate(0,0);
+    transform: translate3d(0,0,0);
+}
+header h1 {
+    color: #ffffff;
+    text-align: center;
+    padding-left: 0;
+    display: block;
+}
+.burger {display: block;}
+
+
+/*  Nav Drawer Layout  */
+nav {position: relative;}
+
+nav ul {
+    height: 100%;
+    overflow-y: auto;
+}
+nav li {
+    display: block;
+    float: none;
+    text-align: left;
+    border-bottom: 2px solid #0F1315;
+    border-top: 1px solid #303A43;
+    vertical-align: bottom;
+}
+nav li i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+nav li a {
+    margin: 0;
+    padding: 14px 22px;
+    letter-spacing: normal;
+    text-align: left;
+    font-size: 14px;
+}
+nav li a.logo {
+    display: none;
+}
+nav li a.active {
+    color: #fff;
+    background-color: #141e23;
+}
+nav li a:hover {
+    color: #fff;
+    background-color: #19252c;
+}
+nav li:first-child a.active,
+nav li:first-child a:hover 
+{border-radius: 10px 0 0 0;}
+
+.header-section {
+    margin-top: 0px;
+    padding: 0px;
+    width: 100%;
+}
+/*メニュー内BUSit(バグ修正のため)*/
+nav li.navttl {
+    margin: 0;
+    text-align: center;
+    line-height: 44px;
+    border: 0;
+}
+.navttl img {
+    vertical-align: middle;
+    height:35px;
+}
+/* NAVIGATION ANNIMATION */
+nav {
+    
+    width: 240px;
+    height: 100%;
+    position: fixed;
+    left: auto;
+    top: 0;
+/*    top: 43px\9;IE8~対策(headerの高さ分)*/
+    right: 0;
+    margin: 0;
+    background: #1d2d35 !important;
+    *display: none;/*IE7対策　contentの高さが少ない時のため*/
+
+    z-index: -2\9;/*IE∼9対策*/
+    /* starting point */
+    opacity: 0;
+    -webkit-transform: translate3d(-5%,0,0)scale(.97);
+    -moz-transform: translate3d(-5%,0,0)scale(.97);
+    -ms-transform: translate(-5%,0)scale(.97);
+    transform: translate3d(-5%,0,0)scale(.97);
+}
+:root nav { top: 0\9; }/*IE8~ハックがIE9にもかかるため*/
+@media all and (-ms-high-contrast:none){
+  nav {
+      top: 0;
+  }
+}
+    /*Nav Expanding Open Effect*/
+    nav.open {
+        display: block !important;
+        
+        opacity: 1;
+        z-index: 10\9;/*IE∼9対策*/
+        *display: block !important;/*IE7対策　contentの高さが少ない時のため*/
+
+        -webkit-transform: translate3d(0,0,0)scale(1);
+        -webkit-animation: slideIn .35s ease-in-out;
+
+        -moz-transform: translate3d(0,0,0)scale(1);
+        -moz-animation: slideIn .35s ease-in-out;
+        
+        -ms-transform: translate(0,0)scale(1);
+
+        transform: translate3d(0,0,0)scale(1);
+        animation: slideIn .35s ease-in-out;
+    }
+    @-webkit-keyframes slideIn {
+        0%       {opacity: .3;
+                  -webkit-transform: translate3d(-5%,0,0)scale(.97);}
+        100%  {opacity: 1;
+               -webkit-transform: translate3d(0,0,0)scale(1);}
+    }
+    @-moz-keyframes slideIn {
+        0%      {opacity: .3;
+                 -moz-transform: translate3d(-5%,0,0)scale(.97);}
+        100%  {opacity: 1;
+               -moz-transform: translate3d(0,0,0)scale(1);}
+    }
+    @keyframes slideIn {
+        0%      {opacity: .3;
+                 transform: translate3d(-5%,0,0)scale(.97);}
+        100%  {opacity: 1;
+               transform: translate3d(0,0,0)scale(1);}
+    }
+
+    /*Nav Shrinking Closed Effect*/
+    nav.close {
+        
+        
+        opacity:.3;
+        z-index: -2\9;/*IE∼9対策*/
+
+        -webkit-transform: translate3d(-5%,0,0)scale(.97);
+        -webkit-animation: slideOut .3s ease-in-out;
+
+        -moz-transform: translate3d(-5%,0,0)scale(.97);
+        -moz-animation: slideOut .3s ease-in-out;
+        
+        -ms-transform: translate(-5%,0)scale(.97);
+
+        transform: translate3d(-5%,0,0)scale(.97);
+        animation: slideOut .0s ease-in-out;
+    }
+    @-webkit-keyframes slideOut {
+        0%      {opacity: 1;
+                 -webkit-transform: translate3d(0,0,0)scale(1);}
+        100%  {opacity: .3;
+               -webkit-transform: translate3d(-5%,0,0)scale(.97);}
+    }
+    @-moz-keyframes slideOut {
+        0%      {opacity: 1;
+                 -moz-transform: translate3d(0,0,0)scale(1);}
+        100%  {opacity: .3;
+               -moz-transform: translate3d(-5%,0,0)scale(.97);}
+    }
+    @keyframes slideOut {
+        0%      {opacity: 1;
+                 transform: translate3d(0,0,0)scale(1);}
+        100%  {opacity: .3;
+               transform: translate3d(-5%,0,0)scale(.97);}
+    }
+
+
+
+    /* CONTENT ANNIMATION */
+    .content {
+        /* starting point */
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate(0,0);
+        transform: translate3d(0,0,0);
+        z-index: 1;
+    }
+
+    /*Content Sliding Open Effect*/
+    .banner_area.open{
+        top:inherit !important;
+        right: inherit !important
+    }
+    header.open,
+    .content.open,
+    #menu-wrap.open,
+    #headWrap.open,
+    .mask.open,
+    .pageTop.open,
+    .banner_area.open,
+    .footer-section.open
+
+    {   
+        *margin-right: 240px;/*IE7対応*/
+        
+        right: 240px;
+        top:0;
+        bottom: 0;
+        -webkit-transform: translate3d(-240px,0,0);
+        -webkit-animation: open .5s ease-in-out;
+
+        -moz-transform: translate3d(-240px,0,0);
+        -moz-animation: open .5s ease-in-out;
+        
+        -ms-transform: translate(-240px,0);
+
+        transform: translate3d(-240px,0,0);
+        animation: open .5s ease-in-out;
+    }
+    @-webkit-keyframes open {
+        0%      {-webkit-transform: translate3d(0,0,0);}
+        70%    {-webkit-transform: translate3d(-260px,0,0);}
+        100%  {-webkit-transform: translate3d(-240px,0,0);}
+    }
+    @-moz-keyframes open {
+        0%      {-moz-transform: translate3d(0,0,0);}
+        70%    {-moz-transform: translate3d(-260px,0,0);}
+        100%  {-moz-transform: translate3d(-240px,0,0);}
+    }
+    @keyframes open {
+        0%      {transform: translate3d(0,0,0);}
+        70%    {transform: translate3d(-260px,0,0);}
+        100%  {transform: translate3d(-240px,0,0);}
+    }
+
+    /*Content Sliding Closed Effect*/
+    header.close,
+    .content.close,
+    #menu-wrap.close ,
+    #headWrap.close,
+    .mask.close,
+    .pageTop.close,
+    .banner_area.close,
+    .footer-section.close
+
+    {
+        
+        *margin-right: 0;/*IE7対応*/
+        
+        -webkit-transform: translate3d(0,0,0);
+        -webkit-animation: close .3s ease-in-out;
+
+        -moz-transform: translate3d(0,0,0);
+        -moz-animation: close .3s ease-in-out;
+        
+        -ms-transform: translate(0,0);
+
+        transform: translate3d(0,0,0);
+        animation: close .3s ease-in-out;
+    }
+    @-webkit-keyframes close {
+        0%      {-webkit-transform: translate3d(-240px,0,0);}
+        100%  {-webkit-transform: translate3d(0,0,0);}
+    }
+    @-moz-keyframes close {
+        0%       {-moz-transform: translate3d(-240px,0,0);}
+        100%  {-moz-transform: translate3d(0,0,0);}
+    }
+    @keyframes close {
+        0%       {transform: translate3d(-240px,0,0);}
+        100%  {transform: translate3d(0,0,0);}
+    }
+
+    #headWrap.open{
+        top: 45px !important;
+    }

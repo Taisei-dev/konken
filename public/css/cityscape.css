@@ -1,0 +1,22 @@
+/*TOPページ　景観*/
+/*広島県*/
+/*広島市*/.hiroshima.cityscape{ background-image: url(../img/cityscape/hiroshima/hiroshima.png); background-position: left top;}
+/*廿日市市*/.hatsukaichi.cityscape{ background-image: url(../img/cityscape/hiroshima/miyajima.png) ;}
+/*福山市鞆の浦*/.tomonoura.cityscape{ background-image: url(../img/cityscape/hiroshima/tomonoura.png) ;}
+/*江田島市*/.etajima.cityscape{ background-image: url(../img/cityscape/hiroshima/etajima.png) ;}
+/*江田島市*/.outlet-hiroshima.cityscape{ background-image: url(../img/cityscape/hiroshima/outlet-hiroshima.png) ;　background-position: 0px -40px}
+
+
+/*山口県*/
+/*岩国市*/.iwakuni.cityscape{ background-image: url(../img/cityscape/yamaguchi/iwakuni.png);}
+.iwakuni.cityscape .bus-img{left: 50%;}
+/*周南市*/.tokuyama.cityscape{ background-image: url(../img/cityscape/yamaguchi/tokuyama.png);}   
+
+
+/*埼玉県*/
+/**/.saitama.cityscape{ background-image: url(../img/cityscape/saitama.png) ;}
+
+
+/*愛媛県*/
+/*松山市*/.matsuyama.cityscape{ background-image: url(../img/cityscape/ehime/matsuyama.png) ;    background-position: left top;}
+/*とべ動物園*/.tobe.cityscape{ background-image: url(../img/cityscape/ehime/tobe.png) ;}

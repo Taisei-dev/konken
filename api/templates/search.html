@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>バス停検索 | バスイット</title>
+<link rel="apple-touch-icon-precomposed" href="https://busit.jp/img/appicon.png">
+<link rel="stylesheet" href="../css/autocomplete.css" media="all">
+<link rel="stylesheet" href="../css/import.css" media="all">
+<!--<link rel="stylesheet" href="/common/css/fonts.css" media="all">-->
+<link rel="stylesheet" href="../css/fonts.css" media="all">
+<link type="text/css" rel="stylesheet" href="../ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+<link href="../img/favicon.ico" rel="shortcut icon" />
+<link rel="icon" href="https://busit.jp/img/appicon.png">
+<link rel="apple-touch-icon-precomposed" href="https://busit.jp/img/appicon.png">
+<script src="../jquery-1.10.2.min.js"></script>
+<script src="../ui/1.10.3/jquery-ui.min.js"></script>
+<script async src="../js/trunk2.js"></script>
+<script async src="../js/busit-general.js"></script>
+<script async src="../js/height.js"></script>
+<!--[if lt IE 9]>
+<script src="/js/html5shiv.js"></script>
+<![endif]-->
+
+<script async=“async” src="../client/towncreation/flux_busit_AS_PB_AT.min.js" type="text/javascript"></script>
+ <script type="text/javascript">
+   var pbjs = pbjs || {};
+   pbjs.que = pbjs.que || [];
+ </script>
+
+</head>
+<body>
+<!--言語切り替え-->
+<section class="modal-window" id="modal-p01">
+	<div class="modal-inner">
+		<p>Change Language</p>
+		<ul>
+						<li><a class="" href="https://busit.jp/lang/ja">日本語</a></li>
+						<li><a class="check" href="https://busit.jp/lang/en">English</a></li>
+						<li><a class="" href="https://busit.jp/lang/ko">&#54620;&#44397;&#50612;</a></li>
+						<li><a class="" href="https://busit.jp/lang/zh_CN">&#x4E2D;&#x6587;&#xFF08;&#x7B80;&#x4F53;&#xFF09;</a></li>
+						<li><a class="" href="https://busit.jp/lang/zh_TW">&#x4E2D;&#x6587;&#xFF08;&#x7E41;&#x9AD4;&#xFF09;</a></li>
+					</ul>
+	</div>
+	<a href="on%3Fq=広島バスセンター.html#!" class="modal-close"></a>
+</section>
+<!--/言語切り替え-->
+<div id="container">
+	<div class="mask slide"></div>
+<header class="slide">
+	<div id="header">
+<h1 id="ttl"><a href="https://busit.jp/"><img src="../img/common/logo.png" width="90" alt="バスイット"></a></h1>
+<p id="language"><a href="on%3Fq=広島バスセンター.html#modal-p01">Lang</a></p>
+<p class="menu"><img src="../img/common/icon_navi.png" width="45" height="45" id="navToggle" class="burger slide" alt=""></p>
+</div></header>
+	<nav class="slide">
+    <ul>
+        <li class="navttl"><img src="../img/common/logo-top.png"></li>
+        <li><a href="https://busit.jp/favorite/"><i class="icon icon-star"></i>My Favorites</a></li>
+        <li><a href="https://busit.jp/history/"><i class="icon icon-time"></i>History</a></li>
+        <li><a href="https://busit.jp/ptimetable/index.html"><i class="icon icon-bus"></i>各バス会社リンク先</a></li>
+        <li><a href="https://busit.jp/howto/setting.html"><i class="icon icon-beginner"></i>ご利用方法</a></li>
+        <li><a href="https://busit.jp/contact/"><i class="icon icon-bill"></i>運営会社</a></li>
+        <li><a href="https://busit.jp/disclaimer.html"><i class="icon icon-guide"></i>ご利用規約</a></li>
+        <!-- <li><a href="https://www.towncreation.com/product/busit-ad/stop_ad/" target="_blank"><i class="icon icon-image"></i>広告募集</a></li> -->
+    </ul>
+</nav>
+	<div class="content slide" style="padding-top:15px;">
+	
+	<div id="local-search" class="searchBox01">
+		<button class="mbwide100" onclick="location.href = '/maps/search.html'">
+		<i class="icon icon-map mr5"></i>現在地から探す</button>
+	</div>
+	
+	<div class="searchBox01">
+		<form method="get" accept-charset="utf-8" id="search" name="search" action="/search/on">		<dl>
+			<dt><input type="string" name="q" class="searchBusStop" placeholder="バス停名で検索（ひらがな・漢字可）" id="q" value="{{ q }}"/>			</dt>
+			<input type="hidden" id="latlon" name="latlon" value="34.3976714,132.4731899" />
+						<dd><button type="submit"><i class="icon icon-search mr5"></i>検索</button></dd>
+		</dl>
+		</form>		
+	<div class="searchBox02">
+					<ul id="sach">
+					{% for result in results %}
+					<li>{{ result | safe}}</li>
+					{% endfor %}				
+			</ul>
+		
+		<div class="pageBtn clearfix">
+					</div>
+	</div><!--/.searchBox02-->
+	
+	</div><!--/.searchBox01-->
+	
+	
+
+</div><!--/.content slide-->
+	<script async src="../js/autocomplete.js"></script>
+</body>
+</html>

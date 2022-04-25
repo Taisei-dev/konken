@@ -1,0 +1,1102 @@
+/*オートコンプリート*/
+ul#ui-id-1{
+    max-width: 558px; 
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #707070;
+    max-height: 300px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+.ui-helper-hidden-accessible {
+    display: none;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br{
+    border-radius:0 !important;
+}
+.ui-state-focus{
+    background: #89cd4a !important;
+    /*background: none !important;*/
+    border: none !important;
+    font-weight: normal !important;
+    color: #000 !important;
+}
+.ui-menu-item {
+    text-align: left;
+    padding: 5px 10px;
+}
+
+/*広告対応 8～10月*/
+#ad{
+    text-align: center;
+    margin: 0 -30px 15px;
+}
+#ad a{
+    display: inline-block;
+    width: 320px;
+    height: 100px;
+    overflow: hidden;
+}
+#ad img{
+    width: 320px;
+    vertical-align: bottom;
+}
+
+
+
+body{
+    font-size: 14px;
+    -webkit-text-size-adjust: 100%;/*Safariハック*/
+}
+/* BUSit共通 装飾 */
+hr{
+    max-width: 1000px;
+}
+
+#index #ttl img{
+    width:120px;
+}
+
+.body-section {
+    margin: 0 auto;
+    text-align: left;
+/*    font-size: 14px;*/
+/*    background: linear-gradient(to bottom, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%); IE10+, W3C */
+}
+@media screen and (max-width: 780px){
+    .body-section {
+        padding:10px;
+    }
+    #index .body-section{
+	padding:0;
+    }
+}
+.content {
+    background: -moz-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* FireFox */
+    background: linear-gradient(to bottom, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* IE10+, W3C */
+    background: -ms-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* IE8-9 */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F4F4F6),color-stop(0.7, #E7E6EE),color-stop(0.9, #DDDCE7));/* Chrome10+, Safari5.1+ */
+    /* IE6-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startcolorstr=#F4F4F6, endcolorstr=#DDDCE7);
+}
+
+/*-------------------------------------------------------------
+　メインイメージ */
+#main-screen{
+    background: #EAFDFF;
+}
+
+.main-ttl{
+    text-align:center;
+    padding:60px 0 30px;
+}
+#main-screen .main-ttl img {
+    max-width: 595px;
+    width: 100%;
+}
+.cityscape{
+    text-align:right;
+    padding: 0 10%;
+    position: relative;
+}
+/*あとで消す#hiroshima.cityscape*/
+.cityscape{
+    background-image: url(../img/top-bg.png);
+}
+.bus-img{
+    position: absolute;
+    left: 30%;
+    bottom: 15px;
+}
+@media only screen and (max-width: 780px) {
+    #main-screen .main-ttl img {
+        width: 80%;
+    }
+    .main-ttl{
+        text-align:center;
+        padding:50px 10px ;
+    }
+    .cityscape{
+        background-position: center top;
+        background-repeat:no-repeat;
+/*        background-size: 1000px;*/
+        background-size: cover;
+        padding:0 40px;
+    }
+    .cityscape img{
+        height: 120px;
+    }
+    .cityscape img.bus-img {
+        width: 100px;
+        height:auto;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #main-screen .main-ttl img{
+        width:100% ;
+    }
+    .main-ttl{
+        text-align:center;
+        padding:35px 10px 50px;
+    }
+    .cityscape {
+        background-size: 600px;
+        padding:0 20px;
+    }
+    .cityscape img{
+        height: 100px;
+    }
+    .cityscape img.bus-img {
+        left: 15%;
+        width: 80px;
+        height:auto;
+    }
+}
+.searchBox01{
+    background: none;
+}
+#local-search{
+    text-align:center;
+    padding-bottom: 15px;
+}
+#local-search button{
+    box-shadow: none;
+    background: #232C4C;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+}
+@media only screen and (max-width: 780px){
+    #local-search button {
+        width: 80%;
+        max-width: 630px;
+    }
+}
+
+#index .searchBox01{
+    margin: 50px auto 100px;
+    text-align: center;
+}
+#index .searchBox01 img {
+    width: 100px;
+    margin: 0 0 10px;
+}
+
+@media only screen and (max-width: 780px){
+    #index .searchBox01{
+        margin: 0 auto 15px;
+    } 
+}
+
+.main-cont{
+    background:#8ABA28;
+    padding:20px 10px 100px;
+}
+@media only screen and (max-width: 360px){
+    .main-cont{
+        padding:20px 0 100px;
+    }
+}
+/*バス会社リンク*/
+#bus-company{
+    margin:-60px auto 0;
+    width:600px;
+}
+#bus-company div{
+    *margin-bottom: 15px;
+    *float: left;/*IE7対策 owl非対応*/
+    *width:70px;
+    text-align:center;
+}
+#bus-company img{
+    width: 70px;
+    height: auto;
+}
+#bus-company a {
+    *display: block;/*IE7対策*/
+    *text-align: center;
+}
+@media only screen and (max-width: 780px) {
+    #bus-company{
+        width:auto;
+    }
+    #bus-company img{
+        width: 50px;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #bus-company{
+        margin-top:-40px;
+        padding: 0 10px 15px;
+    }
+    #bus-company h2 span{
+        padding: 0;
+    }
+}
+.owl-theme .owl-controls{
+    margin: 20px 0 10px !important;
+}
+.owl-theme .owl-nav .owl-prev,
+.owl-theme .owl-nav .owl-prev.disabled,
+.owl-theme .owl-nav .owl-next{
+    border: 1px solid #5A5E70;
+    background: none !important;
+    color: #5A5E70 !important;
+}
+.owl-theme .owl-nav .owl-prev:hover,
+.owl-theme .owl-nav .owl-next:hover{
+    background: #5A5E70 !important;
+    color: #fff !important;
+}
+.owl-theme .owl-dots .owl-dot span{
+    border: 1px solid #5A5E70;
+    background: none !important;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span{
+    background: #5A5E70 !important;
+}
+
+/**/
+/*indexのお知らせ　*/
+/*緊急*/
+#emergency{
+    width: 630px;
+    margin:0 auto 15px;
+    border-radius:10px;
+    padding:5px;
+    background: #DD022F;
+    display:table;
+}
+#emergency h2{
+    display:table-cell;
+    width:15%;
+    *width:11%;
+    *float:left;/*IE7対策　table-cell非対応*/
+    vertical-align:middle;
+    font-weight:bold;
+    text-align:center;
+    padding: 5px 10px;
+    color: #fff;
+}
+#emergency ul{
+    display:table-cell;
+    *float:right;/*IE7対策　table-cell非対応*/
+    width:85%;
+    vertical-align:middle;
+    background:#fff;
+    border-radius:5px;
+}
+#emergency li{
+    padding:5px 10px;
+    color:#DD022F;
+}
+#emergency span{
+    margin-right:1em;
+    font-weight:bold;
+}
+#emergency li a{
+    text-decoration:underline;
+    text-indent:1em;
+    display:inline-block;
+}
+@media only screen and (max-width: 780px) {
+    #emergency {
+        width: auto;
+    }
+    #emergency h2{
+        display:table-cell;
+        width:15%;
+        vertical-align:middle;
+        font-weight:bold;
+        text-align:center;
+        padding: 5px 10px;
+        color: #fff;
+    }
+    #emergency li{
+        width:100%;
+    }
+    #emergency li{
+        padding:5px 10px;
+        color:#DD022F;
+    }
+    #emergency span{
+        margin-right:1em;
+        font-weight:bold;
+    }
+    #emergency li a{
+        text-decoration:underline;
+        text-indent:1em;
+        display:inline-block;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #emergency {
+        margin: 0 10px 15px;
+        padding:5px;
+    }
+    #emergency h2{
+        width:1em;
+    }
+    #emergency ul {
+        width:100%;
+    }
+    #emergency li{
+        width: auto;
+        font-size:14px;
+        padding:2px 5px 2px 10px;
+    }
+    #emergency li span{
+	display:block;
+    }
+    #emergency li a{
+    }
+}
+/**/
+/* --- アンケートリンク --- */
+a.enquete{
+    display: block;
+    border: 2px solid #fff;
+    max-width: 400px;
+    *width: 400px;
+    margin: 0 auto 10px;
+}
+a.enquete img{
+    width: 100%;
+    height: auto;
+}
+
+/*busitからのお知らせ*/
+.news{
+    width: 600px;
+    background: #fff;
+    margin: 0 auto 15px;
+    padding: 15px 30px 25px;
+}
+.news h2{
+    font-weight:bold;
+    text-align:center;
+    padding: 0 10px 5px;
+    margin-bottom:10px;
+    font-size:1.2em;
+    border-bottom:1px solid;
+}
+.news h2 {
+    color: #00BEFF;
+    border-color: #00BEFF;
+}
+.news li{
+    padding:10px 0;
+/*    padding-top: 20px;
+    margin-top: 10px;*/
+    border-top: 1px solid #EDEDED;
+    display: table;
+}
+.news li:first-child{
+    border-top:none;
+}
+.news span{
+    color: #869791;
+/*    display: table-cell; */
+}
+.news li p{
+/*    display: table-cell; */
+/*    padding-left: 2em; */
+}
+.news li p span{
+    margin-right: 1em;
+    font-size: 1.1em;
+    color: #63706B;
+}
+.news a{
+    text-decoration: underline;
+    font-size:1em;
+}
+.news a:hover{
+    color: #ED271D;
+    text-decoration: none;
+}
+.dropdown{
+}
+.dropdown-name{
+    text-decoration: underline;
+    color: #4C79FF;
+    cursor: pointer;
+}
+.dropdown-content{
+    display: none;
+    padding: 10px 0;
+}
+@media only screen and (max-width: 780px) {
+    .news{
+        width:auto;
+        margin:0 auto 15px;
+/*        padding:15px 15px 25px;*/
+    }
+}
+@media only screen and (max-width: 480px) {
+    .news span,
+    .news li p{
+        display: block;
+    }
+    .news li p{
+        padding-left: 0;
+    }
+    .news li p span{
+        margin-right: 0;
+        line-height: 1.8em;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .news{
+        margin: 0;
+    }
+}
+
+/**/
+.section{
+    max-width:870px;
+    margin:0 auto;
+    padding:15px;
+    border-radius: 3px;
+}
+@media only screen and (max-width: 780px) {
+    .section{
+        width:auto;
+        /*padding: 10px 10px 30px;*/
+        padding:15px;
+        margin-bottom: 15px;
+    }
+}
+/**/
+.ttl {
+    padding: 20px 0;
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: bold;
+}
+.ttl span {
+    display: block;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #999;
+}
+.ttl br{
+    display: none;
+}
+.ttl2{
+    color: #fff;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    background: #8FC31F;
+    font-size: 1.4em;
+    line-height: 1.8em;
+    font-weight: bold;
+}
+.ttl3 {
+    color: #5A5E70;
+    background: #D1D2DA;
+    padding: 0.4em;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+@media screen and (min-width: 481px){
+    h2 span br,
+    h3 span br,
+    p.company br {
+        display: none;
+    }
+}
+@media screen and (max-width: 480px){
+    .ttl{
+        padding:15px 0;
+        font-size:20px;
+    }
+    .ttl br{
+        display: block;
+    }
+    .ttl2{
+        font-size: 16px;
+    }
+    .ttl span {
+        font-size: 12px; 
+        padding:10px 0;
+    }
+}
+
+/*---------------------------------------------------
+　ご利用方法*/
+#breadcrumb{
+    max-width:900px;
+    margin:0 auto 30px;
+    padding:15px;
+}
+#breadcrumb li{
+    float:left;
+}
+#breadcrumb li a{
+    margin-right:1em;
+}
+#breadcrumb li a:after{
+    content:"　＞";
+    color:#000;
+}
+#loca_cont .group{
+    background:#fff;
+}
+#loca_cont .group span{
+    text-align:center;
+    display:block;
+}
+.group.howto{
+    text-align:center;
+    margin-bottom:15px;
+}
+.group img{
+    max-width:300px;
+    width:100%;
+    margin: 15px auto 5px;
+    display: block;
+}
+@media only screen and (max-width: 780px) {
+    #breadcrumb{
+        width:auto;
+        font-size:0.9em;
+    }
+    .group.howto{
+        text-align:left;
+    }
+}
+#menu{
+    margin:15px 0 35px;
+}
+#menu li {
+    float: left;
+    width:50%;
+    *width: 420px;
+    text-align:center;
+}
+#menu li.mn_loca {
+    width:100%;
+}
+#menu li a {
+    color:#fff;
+    vertical-align:middle;
+    display:block;
+    padding:1em 0;
+    font-size:1.1em;
+    font-weight: bold;
+}
+#menu li i{
+    display:block;
+    font-size: 60px;
+    margin-bottom:0.2em;
+}
+.menu_btn{
+    text-align:center;
+}
+.menu_btn a{
+    color:#fff;
+    padding:1em;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+}
+.mn_browser a{ background:#b97ec6; border-bottom:10px solid #863E80;}
+.mn_stop a{ background:#89cd4a; border-bottom:10px solid #44880C;}
+.mn_screen a{ background:#ff9800; border-bottom:10px solid #E85F01;}
+.mn_nfc a{ background:#4dd2ff; border-bottom:10px solid #1E8FD5;}
+.mn_loca a{ background:#ff7373; border-bottom:10px solid #FF3433;}
+
+.mn_browser a:hover{ background:#863E80;}
+.mn_stop a:hover{ background:#44880C;}
+.mn_screen a:hover{ background:#E85F01;}
+.mn_nfc a:hover{ background:#1E8FD5;}
+.mn_loca a:hover{ background:#FF3433;}
+
+#menu li br{ display:none;}
+
+@media only screen and (max-width: 780px) {
+    #menu li br{
+        display:block;
+    }
+    #menu{
+        padding:0;
+    }
+    #menu li {
+        margin:0;
+    }
+}
+#device img{
+    width:100%;
+    max-width:600px;
+    margin:0 auto;
+    display:block;
+}
+#shortcut,
+#favorite{
+    background:#fff;
+}
+#shortcut .group{
+    float:left;
+    margin:0 0 15px 30px;
+}
+#shortcut img{
+    display:block;
+    margin:0 50px 15px 0;
+    width:90%;
+    max-width:400px;
+    float:right;
+}
+#shortcut .note{
+    clear:both;
+    text-align:right;
+}
+.note{
+    color:#3E3A39;
+}
+@media only screen and (max-width: 780px) {
+    #shortcut .group,
+    #shortcut img{
+        float:none;
+    }
+    #shortcut .group{
+        margin:0;
+    }
+    #shortcut img{
+        margin:0 auto 15px;
+    }
+}
+
+#trouble{
+    background:#fff;
+}
+.inner{
+    display:table;
+    *display:block;
+    margin:15px 0;
+    width: 100%;
+    table-layout: fixed;
+}
+.inner .description{
+    display:table-cell;
+    vertical-align: top;
+    *width:390px;
+    *float:left;
+    *display:block;
+    padding:0 15px;
+}
+.description{
+    /*padding: 15px;*/
+    margin-bottom:15px;
+}
+.description img{
+    margin:15px auto;
+    display:block;
+}
+.description p img{
+    margin:0;
+    display: inline;
+}
+.description span{
+    text-align:center;
+    display: block;
+}
+
+/**/
+.owl-wrapper{
+    *width:900px !important;/*IE7*/
+}
+.owl-carousel .owl-item{
+    *width:450px !important;/*IE7*/
+    *margin-bottom:30px;/*IE7*/
+}
+
+@media screen and (min-width: 781px){
+/*    .inner .description.side .ttl2{
+        line-height: 70px;
+    }*/
+    #loca_cont .owl-wrapper{
+        width:900px !important;
+    }
+    #loca_cont .owl-carousel .owl-item{
+        width:450px !important;
+        margin-bottom:30px;
+    }
+}
+.row{
+    padding-right:2em;
+}
+.row img{
+    max-width:200px;
+    width:100%;
+    display:block;
+    margin:0 auto;
+}
+.row p{
+    margin-bottom:0.5em;
+}
+.row .no {
+    background:#86B32F;
+    color:#fff;
+    font-weight:bold;
+    padding:0.2em 0.5em;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    border-radius:3px;
+    margin-right:0.5em;
+}
+@media screen and (max-height: 375px){
+    .row img{
+        width:200px;
+    }
+}
+
+
+@media screen and (max-width: 780px){
+    #loca_cont .owl-wrapper{
+        width:auto ;
+    }
+    #loca_cont .owl-carousel .owl-item{
+        width:auto ;
+        margin-bottom:0;
+    }
+    #bustop-cont .description{
+        float:none;
+        width:auto;
+    }
+    .inner{
+        display:inherit;
+        margin:0;
+    }
+    .inner .description{
+        display:inherit;
+        width:auto;
+        padding:0 25px;
+    }
+}
+@media screen and (max-width: 480px){
+    .row{
+        padding:0;
+    }
+}
+#favorite p{
+    margin-bottom: 0.7em;
+}
+#favorite-img p{
+    display: inline-block;
+    *zoom: 1;
+    *display:inline;
+    margin: 0 20px;
+    max-width: 320px;
+    width: 100%;
+}
+#favorite-img img{
+    max-width: 320px;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+#favorite .note{
+    color: #666;
+}
+@media screen and (max-width: 480px){
+    #favorite-img p{
+        display: block;
+        margin: 0;
+        max-width: 100%;
+    }
+    #favorite img{
+        margin: 25px auto 0;
+    }
+}
+/*NFCをONにする方法*/
+p.mobels_inner {
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.model-cont {
+    background: #fff;
+    margin: 0 0 10px;
+    padding: 10px;
+}
+#docomo_setting{
+    margin:0 0 20px;
+}
+
+@media screen and (max-width: 780px){
+}
+@media screen and (max-width: 480px){
+
+}
+/*商標*/
+.trademark{
+    margin:15px auto;
+    font-size:12px;
+    color: #666;
+	background:#fff;
+}
+
+/*お問い合わせ*/
+.form{
+    text-align: center;
+    width: 600px;
+}
+.form .note{
+    font-size: 12px;
+    color: #666;
+}
+.form label.ttl3{
+    display: block;
+    text-align: left;
+}
+.form textarea{
+    width: 600px;
+    height: 150px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 14px;
+}
+.form button{
+    background: #8ABA28;
+    border: none;
+    text-align: center;
+    font-size: 1.1em;
+    font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", メイリオ, sans-serif;
+    margin:30px 0;
+    padding: 8px 0;
+    color: #fff;
+    width: 150px;
+}
+.g-recaptcha div{
+    margin: 0 auto;
+}
+.form button:hover{
+    background: #a9a9a9;
+}
+@media screen and (max-width: 780px){
+    .form{
+        width: auto;
+    }
+    .form textarea{
+        width: 100%;
+        height: 100px;
+        margin: 0 auto 15px;
+    }
+    .form button{
+        margin: 30px auto 0;
+        width: 150px;
+        display: block;
+    }
+    .form .note{
+        margin: 5px 0;
+    }
+}
+p.company{
+    text-align: center;
+}
+p.company a {
+    font-size: 16px;
+    color: #000;
+    display: inline-block;
+}
+.company a img {
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+/*---------------------------------------------------
+　BUSit利用規約
+---------------------------------------------------*/
+#disclaimer #pageBox{
+	font-size: 14px !important;
+}
+#disclaimer dl dt{
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#disclaimer dl dd{
+	margin-bottom: 15px;
+}
+#disclaimer dl.level_1 {
+	margin-bottom: 30px;
+}
+#disclaimer dl.level_1 > dt{
+	background: #fff;
+	border-radius: 5px;
+	padding: 5px 10px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#disclaimer dl.level_1 > dd{
+	margin-bottom: 15px;
+}
+#disclaimer dl.level_1 > dd > p,
+#disclaimer dl.level_2 > dd > p{
+	margin-bottom: 15px !important;
+}
+#disclaimer dl.level_1 dl.level_2 {
+	margin-left: 1em;
+}
+#disclaimer dl.level_2 ol,
+#disclaimer dl.level_2 ul{
+	margin-left: 1em;
+}
+#disclaimer dl.level_2 > dd > ol li{
+	margin-bottom: 15px !important;
+}
+#disclaimer dl.level_3 > dd > ol li,
+#disclaimer dl.level_3 > dd > ul li{
+	margin-bottom: 0 !important;
+}
+#disclaimer dl.level_3 > dd > p{
+	margin-bottom: 5px !important;
+}
+#disclaimer dl.level_3 > dd > ul li{
+	list-style: disc inside;
+}
+#disclaimer ol.level_2,
+#disclaimer ol.level_3{
+	margin-left: 1em;
+	margin-bottom: 15px;
+}
+#disclaimer ol.level_2 li,
+#disclaimer ol.level_2 li > p{
+	margin-bottom: 5px;
+}
+
+
+#disclaimer .tel-bana{
+    text-align: center;    
+}
+#disclaimer .tel-bana a{
+    display: inline-block;  
+}
+#disclaimer .tel-bana img{
+    width: auto;
+    height: auto;
+}
+@media screen and (max-width: 780px){
+    #disclaimer .tel-bana img{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px){
+    p.company {
+        margin: 10px 0;
+    }
+    .company a img {
+        width: 40%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    .company span{
+        display:block;
+        line-height: 1;
+        font-weight: bold;
+    }
+}
+#setting .container,
+#inquiry .container,
+#disclaimer .container{
+    position: relative;
+}
+#setting .footer-section,
+#inquiry .footer-section,
+#disclaimer .footer-section{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: inherit !important;
+    z-index: 1;
+} 
+@media screen and (max-width: 780px){
+    #setting .footer-section,
+    #inquiry .footer-section,
+    #disclaimer .footer-section{
+        position: static;
+    }
+}
+
+/*時刻表（各社サイトリスト）*/
+.acMenu{
+    
+    color: #5A5E70;
+    background: #D1D2DA;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+/*.acBox{
+    display: none;
+}*/
+
+/* ページトップへ戻る */
+.pageTop {
+    display:none;
+    position:relative;
+    bottom: 35px;
+    height:0;
+    margin:0 auto;
+    text-align: right;
+}
+.pageTop a {
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    padding:0;
+    background:#232C4C;
+    text-align:center;
+    outline:none;
+    z-index:9999;
+    border-radius:3px 3px 0 0;
+    display: block;
+}
+.pageTop a:before,
+.pageTop a:after {
+    position:absolute;
+    left:50%;
+    content:"";
+    width:0px;
+    height:0px;
+    margin-left:-10px;
+    border:10px solid transparent;
+}
+.pageTop a:before {
+    top:50%;
+    margin-top:-13px;
+    border-bottom:10px solid #232C4C;
+}
+.pageTop a:after {
+    top:50%;
+    margin-top:-15px;
+    z-index:-1;
+    border-bottom:10px solid #fff; 
+}
+
+@media screen and (max-width: 479px) {
+.pageTop a {
+    width:44px;
+    height: 44px;
+}
+
+}
+@media print{
+    #wrapper,
+    #index,
+    .container{
+        width:1000px;
+    }
+}

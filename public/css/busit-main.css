@@ -1,0 +1,2349 @@
+@charset "utf-8";
+/* BUSit共通 装飾 */
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", メイリオ, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #000;
+    text-align: center;
+    background: -moz-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* FireFox */
+    background: linear-gradient(to bottom, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* IE10+, W3C */
+    background: -ms-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* IE8-9 */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F4F4F6),color-stop(0.7, #E7E6EE),color-stop(0.9, #DDDCE7));/* Chrome10+, Safari5.1+ */
+    /* IE6-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startcolorstr=#F4F4F6, endcolorstr=#DDDCE7);
+    -webkit-text-size-adjust: 100%;/*iphone対策*/
+}
+/* MAPのみグラデーションなし */
+body.bgnone{
+    background:#F4F4F6;
+    filter: none;
+}
+/*#container{
+    position: relative;
+}*/
+.container{
+    width: 100%;
+    position: relative;
+    height:auto !important; /*IE6対策*/
+    height: 100%; /*IE6対策*/
+    min-height: 100%;
+}
+
+a {
+    color: #4C79FF;
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    vertical-align: bottom;
+}
+.open .mask {
+    display: block;
+}
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #212222;
+    opacity: .3;
+    display: none;
+    z-index: 10;
+    filter:alpha(opacity=30); /* IE 6,7*/
+    *zoom:1;
+}
+.mask.open{
+    display: block;
+    right: 0;
+}
+/*.content.open{
+    margin-right: 240px;
+}*/
+/*@media screen and (max-width: 780px) {
+    .mask.open{
+        background: #000;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        opacity: .5;
+        display: block;
+    }
+}*/
+
+
+/* form */
+select {
+    width: 230px;
+    padding-top: 2px;
+    padding-left: 5px;
+    font-size: 16px;
+/*  font-size: 13px;
+    line-height: 24px;*/
+    /**/
+    appearance: button;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    /**/
+    border: 1px inset #CCC;
+    /**/
+    background: #FFF url(https://busit.jp/img/common/bg_select.png) no-repeat 100% 47%;
+    background-size: 24px 89px;
+    -moz-background-size: 24px 89px;
+    -webkit-background-size: 24px 89px;
+    /**/
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2) inset;
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2) inset;
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2) inset;
+}
+/* form */
+/*#container,
+.container{
+    height: 100%;
+}
+@media only screen and (max-width: 780px) {
+    #container.all_display{
+        height: auto;
+    }
+}*/
+.content,
+.container{
+    background: -moz-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* FireFox */
+    background: linear-gradient(to bottom, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* IE10+, W3C */
+    background: -ms-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);/* IE8-9 */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F4F4F6),color-stop(0.7, #E7E6EE),color-stop(0.9, #DDDCE7));/* Chrome10+, Safari5.1+ */
+    /* IE6-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startcolorstr=#F4F4F6, endcolorstr=#DDDCE7);
+    /*height: 100%;*/
+}
+
+
+
+/* セクション */
+.header-section {
+    width: 100%;
+    height: 100%;
+}
+.body-section {
+/*    background: -moz-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%);
+    background: -ms-linear-gradient(center top, #F4F4F6 0%,#E7E6EE 70%,#DDDCE7 90%); IE10+ 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F4F4F6),color-stop(0.7, #E7E6EE),color-stop(0.9, #DDDCE7));*/
+    /* IE8-9 */
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#F4F4F6', endColorstr='#DDDCE7', GradientType=0)";*/
+}
+.footer-section {
+    background-color: #232C4C;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+}
+
+
+/* メインイメージ */
+.topImg{
+    background:#fff url(https://busit.jp/img/top_bk.gif) center bottom repeat-x;
+}
+.topImg img{
+    width: 100%;
+    max-width: 1280px;
+}
+@media only screen and (max-width: 780px) {
+    .topImg{
+        background-size: 1284px 80px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .topImg{
+        background-size: 800px;
+    }
+}
+/* ヘッダー */
+#header {
+    position: relative;
+    display: table;
+    width: 100%;
+    min-height: 45px;
+    height: 45px;
+    height: 46px\9;/*IE∼9(burgerの画像に合わせる)*/
+    background:#232C4C url(https://busit.jp/img/common/bg_header.png) repeat-x 0 bottom;
+    background-size: 320px 2px;
+}
+
+/* タイトル */
+#ttl {
+    color: #FFF;
+    display: table-cell;
+    *float: left;
+    height: 40px;
+    padding: 0 20px 0 10px;
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: left;
+    *margin-top:5px;/*IE7*/
+}
+#ttl a{
+    display: inline-block;
+    vertical-align: middle;
+}
+#ttl img{
+    width:73px;
+}
+/*戻る（バス停名）*/
+#back {
+    text-align: left;
+    background-size: 10px 3px;
+    display: table-cell;
+    vertical-align: middle;
+    *height: 45px;/*IE7対策*/
+}
+#back a {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 30px;
+    background: url(https://busit.jp/img/common/icon_back.png) no-repeat 16px 5px;
+    background-position: 16px 0\9;/*IE∼9対策*/
+    background-size: 7px 10px;
+    *line-height: 45px;/*IE7対策*/
+}
+/* 言語切替 */
+#language{
+    text-align: right;
+    background-size: 10px 3px;
+    display: table-cell;
+    vertical-align: middle;
+    *position: absolute;/*IE7対策*/
+    *top: 0;/*IE7対策*/
+    *right: 50px;/*IE7対策*/
+}
+
+#language a{
+    color: #FFF;
+    font-weight: bold;
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 20px;
+    background: url(https://busit.jp/img/common/icon_language.png) no-repeat right 9px;
+    background-position: 50px 9px\9;/*IE∼9対策*/
+    background-size: 15px 3px;
+    *line-height: 45px;/*IE7対策*/
+    white-space: nowrap;
+}
+
+.menu {
+    width: 45px;
+    color: #FFF;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+}
+/*お気に入り*/
+#favorite a{
+    display: block;
+    /*width: 45px;*/
+    color: #fff;
+    position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+#favorite a span.icon_mark{
+	display: block;
+	font-size: 20px;
+	line-height: 24px;
+}
+#favorite a span.icon_name{
+	font-size: 10px;
+	font-weight: 700;
+}
+
+.fav,
+.fav-inner{
+    display:none;
+}
+.fav.active{
+    background: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: block;
+}
+.fav .fav-inner.active{
+    width:280px;
+    height:130px;
+    padding:10px 0;
+    text-align:center;
+    background:#fff;
+    position:absolute;
+	display: block;
+	top:50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	margin: auto;
+    border-radius:3px;
+}
+.fav-inner p.on,
+.fav-inner p.no{
+    line-height:90px;
+    font-size:14px;
+}
+.fav-inner p.block{
+    display: block;
+}
+.fav-inner p.none{
+    display: none;
+}
+.fav-inner a.close{
+/*    line-height:50px;*/
+    background:#232C4C;
+    border-radius:3px;
+    color:#fff;
+    padding:5px 15px;
+    cursor:pointer;
+    font-size:14px;
+    display: inline-block;
+    *display:inline;/*IE7対応*/
+    *zoom:1;/*IE7対応*/
+}
+@media only screen and (max-width: 780px){
+    .fav-inner a.close{
+        padding:10px 15px;
+    }
+}
+/*お知らせウィンドウ*/
+.msg {
+    position:fixed;
+    top:0; bottom:0;
+    left:0; right:0;
+    display:none;
+    background:rgba(0,0,0,.8);
+    z-index: 100;
+}
+.msg-box{
+    min-width: 270px;
+    *width:300px;
+    *margin:0 auto;
+    text-align: center;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    border-radius: 3px;
+}
+.msg-ttl{
+    color:#fff;
+    font-weight:bold;
+    font-size:18px;
+    background:#89cd4a;
+    border-radius: 3px 3px 0 0;
+    padding:15px 0;
+}
+.msg-text{
+    padding: 15px;
+}
+.msg-border{
+    border-bottom:1px solid #333;
+}
+.msg-note{
+    padding: 10px 15px;
+    font-size:13px;
+    color:#8A8D92;
+    text-align:left;
+}
+/* 広告エリア */
+.banner_area {
+    /*background: #F4F4F6;*/
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    max-height: 100px;
+}
+.banner_area.min{
+    height: 50px;
+}
+.banner_area.high{
+    height: 100px;
+}
+.banner-box{
+    margin:0 auto;
+    width:320px;
+/*    height:100px;
+    background: #FFF;*/
+}
+#banner a{
+    /*ローテーションのみblock*/
+    display:block;
+}
+#banner img{
+    width: 320px;
+}
+#GDN{
+    height:100px;
+}
+/*google 広告*/
+.banner_area .adsbygoogle {
+    margin: 0 auto;
+}
+iframe#ad_iframe {
+    top: inherit !important;
+    bottom: 0 !important;
+}
+/* bstop_ttlBox(set) */
+#bstop_ttlBox {
+/*    padding: 8px 10px;
+    border-top: 1px solid #C5C5C5;*/
+    background: #f4f4f4; /* Old browsers */
+    background: -moz-linear-gradient(top, #f4f4f4 0%, #e7e6ee 70%, #dddce7 90%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f4f4f4 0%,#e7e6ee 70%,#dddce7 90%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f4f4f4 0%,#e7e6ee 70%,#dddce7 90%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#dddce7',GradientType=0 ); /* IE6-9 */
+}
+#bstop_ttlBox {
+    line-height: 1.3;
+}
+#bstop_ttlBox .bstop_furi {
+    display: block;
+    font-weight: normal;
+    text-align: center;
+}
+#bstop_ttlBox .bstop_name {
+    display: block;
+    font-size: 20px;
+}
+#bstop_ttlBox.event{
+    -ms-filter: none;
+    filter: none;
+}
+/*#bstop_ttlBox.event.xmas{
+    background:url(/img/event/xmas/back.gif);
+    background-position: bottom;
+    background-size: contain;
+}*/
+/*#bstop_ttlBox.event.xmas .mark{
+    background: url(/img/event/xmas/mark.png) no-repeat;
+    background-size: contain;
+}*/
+/*#bstop_ttlBox.event.newyear{
+    background: url(/img/event/newyear/back.gif);
+    background-position: top;
+}*/
+/*#bstop_ttlBox.event.gw{
+    background: url(/img/event/bg.png);
+    background-position: top;
+    background-size: contain;
+    background-repeat-y:no-repeat;
+    background-color: #fff;
+}*/
+/*#bstop_ttlBox.event.gw .busStopName{
+    background: #fff;
+    border-radius: 3px;
+    padding: 2px 5px 0 5px;
+}*/
+/*#bstop_ttlBox.event.gw #bstop_control{
+    background: #E3F2F5;
+}*/
+
+
+#area {
+    border-bottom: solid #CCC 1px;
+/*    margin-bottom: 10px;
+    padding-bottom: 10px;*/
+    padding: 8px 10px 10px;
+
+}
+#bstop_ttlBox.event #area{
+    height: 89px;
+}
+#bstop_ttlBox.event #area{
+    background-position: bottom;
+    background-size: contain;
+    background-repeat:  no-repeat;
+}
+/*　イベント背景：クリスマス*/
+/*#bstop_ttlBox.event.xmas #area{
+    background-image: url(/img/event/xmas/character.png);
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}*/
+/*　イベント背景：年末年始*/
+/*#bstop_ttlBox.event.newyear #area{
+    background-image: url(/img/event/newyear/character.png);
+}*/
+/*　イベント背景：ゴールデンウイーク*/
+#bstop_ttlBox.event.gw #area{
+    background-image: url(https://busit.jp/img/event/main.png);
+    background-position: center bottom;
+    background-size: contain;
+}
+
+.mark {
+    background: url(https://busit.jp/img/common/bg_mark.png) no-repeat;
+    background-size: 44px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 16px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    /*IE*/
+    background: #fff\9;
+    line-height: 44px\9;
+    padding-top: 8px\9;
+}
+/* IE9, 10 */
+.mark:not(:target) {
+    background: url(https://busit.jp/img/common/bg_mark.png) no-repeat\9; 
+    padding-top: 16px\9;
+}
+.busStopName {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
+}
+/*　お知らせ(元)　*/
+@-webkit-keyframes marquee {
+  from   { -webkit-transform: translate(0%);}
+  99%,to { -webkit-transform: translate(-100%);}
+}
+@-moz-keyframes marquee {
+  from   { -moz-transform: translate(0%);}
+  99%,to { -moz-transform: translate(-100%);}
+}
+@-ms-keyframes marquee {
+  from   { -ms-transform: translate(0%);}
+  99%,to { -ms-transform: translate(-100%);}
+}
+@-o-keyframes marquee {
+  from   { -o-transform: translate(0%);}
+  99%,to { -o-transform: translate(-100%);}
+}
+@keyframes marquee {
+  from   { transform: translate(0%);}
+  99%,to { transform: translate(-100%);}
+}
+
+.marquee {
+    /*枠の設定*/
+    background: #3F3F3F url(https://busit.jp/img/common/bg_board01.png) repeat 0 0;
+    background-size: 2px;
+    -moz-background-size: 2px;
+    -webkit-background-size: 2px;
+    /**/
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    /**/
+    box-shadow: 0 2px 3px rgba(0,0,0,0.4) inset;
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.4) inset;
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.4) inset;
+    margin:0 0 8px;
+    padding: 6px 2px 8px;
+    overflow: hidden;
+}
+.marquee span {
+-webkit-animation-name:marquee;
+    -webkit-animation-timing-function:linear;
+    -webkit-animation-duration:40s;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-name:marquee;
+    -moz-animation-timing-function:linear;
+    -moz-animation-duration:40s;
+    -moz-animation-iteration-count:infinite;
+    -ms-animation-name:marquee;
+    -ms-animation-timing-function:linear;
+    -ms-animation-duration:40s;
+    -ms-animation-iteration-count:infinite;
+    -o-animation-name:marquee;
+    -o-animation-timing-function:linear;
+    -o-animation-duration:40s;
+    -o-animation-iteration-count:infinite;
+    animation-name:marquee;
+    animation-timing-function:linear;
+    animation-duration:40s;
+    animation-iteration-count:infinite;
+    white-space: nowrap;
+    color: #FFC519;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 320px;
+    display: inline-block;
+}
+/*
+.marquee span:after {
+	content:"";
+	white-space:nowrap;
+	padding-right:50px;
+}
+.marquee a {
+	color: #FFF;
+}
+*/
+
+
+/* --- のりば切替ボタンなど --- */
+#bstop_control{
+/*    margin: 0 auto;*/
+    position: relative;
+    height: 32px; 
+    padding: 10px;
+}
+
+.goal {
+    position: absolute;
+    left: 10px;
+    font-size: 13px;
+    padding: 8px 6px;
+    display: inline-block;
+    *display: inline;/*IE7 inline-block*/
+    *zoom: 1;/*IE7 inline-block*/
+    font-weight: bold;
+	color: #333C47;
+}
+.goal a{
+	font-weight: normal;
+}
+.goal.highlight{
+    background: #232C4C;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.goal.highlight a{
+    text-overflow: ellipsis;
+	font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+    display: inline-block;
+    *display: inline;/*IE7 inline-block*/
+    *zoom: 1;/*IE7 inline-block*/
+    vertical-align: middle;
+    color: #fff;
+    text-align: left;
+}
+.goal,
+.change,
+.update{
+    padding:0 6px;
+    background: #D0D1DC;
+    line-height: 32px;
+    border-radius: 4px;
+    display: inline-block;
+    *display: inline;/*IE7 inline-block*/
+    *zoom: 1;/*IE7 inline-block*/
+}
+.change{
+    position: absolute;
+    left:50%;
+}
+
+.update{
+    position: absolute;
+    right: 10px;
+    margin-left: 10px;
+}
+.change i,
+.update i{
+    margin-right: 4px;
+}
+
+.change a,.change,
+.update a,.update{
+    font-weight: bold;
+    color: #333C47;
+}
+@media only screen and (max-width: 780px){
+    .goal.highlight a{
+        width: 150px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .goal.highlight a{
+        width: 80px;
+    }
+}
+
+/* --- のりば切替ボタンなど --- */
+
+/* --- アンケートリンク --- */
+a.enquete{
+    display:block;
+}
+a.enquete img{
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+/*.enquete {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    height: 100px;
+}*/
+/* --- アンケートボタン --- */
+
+/* --- バス会社選択 --- */
+.selectBus {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.selectBus a {
+    font-weight: bold;
+}
+/* --- バス会社選択 --- */
+
+/* --- stopBusBox01(set) 便一覧 --- */
+.stopBusBox01 {
+    padding: 10px 10px 120px;/*bottom広告分+*/
+    background: #FFF;
+}
+
+#headWrap .stopBusBox01 {
+    padding: 0px;
+}
+
+.stopBusBox01.type01 {
+    background: #C2C4CF;
+}
+/* --- stopBusBox01(set) 便一覧 --- */
+
+/* --- 便 --- */
+.stopBusBox01.type01 li {
+    background: #465262; /* Old browsers */
+    background: -moz-linear-gradient(top, #465262 0%, #20262d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#465262), color-stop(100%,#20262d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #465262 0%,#20262d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #465262 0%,#20262d 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #465262 0%,#20262d 100%); /* IE10+ */
+    background: linear-gradient(bottom, #465262 0%,#20262d 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#465262', endColorstr='#20262d',GradientType=0 ); /* IE6-9 */
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 4px;
+}
+
+.stopBusBox01 .head {
+    height: 36px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.stopBusBox01 .time{
+    font-weight: bold;
+    color: #FFF;
+    display: table-cell;
+    min-width: 70px;
+    text-align: left;
+    float: left;
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.stopBusBox01 .status {
+    color: #FFF;
+    display: table-cell;
+    min-width: 90px;
+    float: right;
+    text-align: right;
+    font-size: 15px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+li.soon .status{
+    color: #FF5B26;
+}
+
+.iconGroup {
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    color: #FFF;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.iconGroup p span{
+	margin-right:5px;
+}
+
+.extraordinary {
+    background: #B92523;
+    padding: 4px 6px;
+    border-radius: 2px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.nonStep {
+    background: #379BFF;
+    padding: 4px 6px;
+    border-radius: 2px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.oneStep {
+    background: #11C891;
+    padding: 4px 6px;
+    border-radius: 2px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+.twoStep {
+    background: #9b59b6;
+    padding: 4px 6px;
+    border-radius: 2px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.highWay {
+    background: #FF5C26;
+    padding: 4px 6px;
+    border-radius: 2px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.lastBus {
+    background: #FF5C26;
+    padding: 4px 6px;
+    border-radius: 2px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.incompatible{
+    background: #5E6D84;
+    padding: 4px 6px;
+    border-radius: 2px;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+.stopBusBox01 li div.btm {
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.stopBusBox01 .company {
+    display: table-cell;
+    *float:left;    
+    width: 55px;
+    text-align: left;
+    background: url(https://busit.jp/img/common/bg_balloon01.png) no-repeat 100% 50%!important;
+    background-size: 4px 13px!important;
+    -moz-background-size: 4px 13px!important;
+    -webkit-background-size: 4px 13px!important;
+}
+
+.stopBusBox01 .bordBox {
+    display: table-cell;
+    *float: left;
+    *width: 95%;
+}
+
+.stopBusBox01 .inBox {
+    display: table;
+    width: 100%;
+    border-spacing: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #000!important;
+    *padding:10px;
+}
+
+.stopBusBox01 .num {
+    border: #FFBF00 solid 2px;
+    min-width: 30px;
+    *height: 30px;
+    height: 100%;
+    color: #FFBF00;
+    display: table-cell;
+    *float: left;
+    padding: 3px 0 2px!important;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 1.4;
+    /**/
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    /**/
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4) inset;
+    -moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.4) inset;
+    -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.4) inset;
+    /**/
+    background-repeat: repeat, no-repeat;
+    background-position: 0 0, 0 0;
+    background-size: 2px, contain;
+    -moz-background-size: 2px, contain;
+    -webkit-background-size: 2px, contain;
+}
+
+
+.stopBusBox01 .destination {
+    color: #FFF;
+    width: 88%;
+    background-image: url(https://busit.jp/img/common/bg_board01.png), -moz-linear-gradient(center top, #3F3F3F 0%,#232522 80%)!important;
+    background-image: url(https://busit.jp/img/common/bg_board01.png), -webkit-gradient(linear, left top, left bottom, color-stop(0, #3F3F3F),color-stop(0.8, #232522))!important;
+}
+
+.stopBusBox01 .destination,
+.stopBusBox01 .req_time {
+    display: table-cell;
+    padding: 3px 0 2px!important;
+    vertical-align: middle;
+    font-weight: bold;
+    line-height: 1.4;
+    /**/
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    /**/
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.4) inset;
+    -moz-box-shadow: 2px 2px 3px rgba(0,0,0,0.4) inset;
+    -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.4) inset;
+    /**/
+    background-repeat: repeat, no-repeat;
+    background-position: 0 0, 0 0;
+    background-size: 2px, contain;
+    -moz-background-size: 2px, contain;
+    -webkit-background-size: 2px, contain;
+}
+
+.stopBusBox01 .bordBox a {
+    color: #FFF;
+}
+
+.stopBusBox01 .route {
+    display: block;
+    font-size: 11px;
+    color: #FFBF00;
+}
+.stopBusBox01 .terminal {
+    display: block;
+    font-size: 17px;
+}
+.stopBusBox01 .terminal .icon {
+    margin: 0 .5em;
+}
+
+/* --- 便 --- */
+
+.searchBox01 {
+    padding: 15px;
+    margin: 15px;
+    background: #dddce7;
+    border-radius: 5px;
+}
+#local-search.searchBox01{
+    margin-top: 0;
+} 
+#local-search button{
+    background: #f6f6f6;
+    box-shadow: 0 3px 0 #999;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    width: 280px;
+}
+#local-search button:hover{
+    background: #999;
+}
+@media only screen and (max-width: 780px){
+    #local-search button {
+        max-width: inherit;
+        margin-bottom: 10px;
+    }
+}
+@media only screen and (max-width: 320px){
+    #local-search button {
+        width: 100%;
+    }
+}
+/* バス停検索 テキスト */
+.searchBox01 dl{
+    max-width: 640px;
+    margin: 0 auto;
+    
+    position:relative;
+    background-color:#fff;
+    border: 1px solid #707070;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -o-border-radius:4px;
+    -ms-border-radius:4px;
+    border-radius:4px;
+    display: table;
+    width: 100%;
+    *display: block;
+}
+.searchBox01 dt{
+/*    margin-right:80px;*/
+    display: table-cell;
+    *display: block;
+    *float: left;
+    *width: 560px;
+}
+.searchBox01 dt input{
+    width:100%;
+    background:none;
+    border:none;
+    padding:10px; 
+    font-size: 16px;/*Safari対応*/
+    *width: 619px;
+/*    line-height: 38px;*/
+    box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.searchBox01 dd{
+    width:80px; 
+    display: table-cell;
+    background-color: #232C4C;
+    border-radius:0 3px 3px 0; 
+    *display: block;
+    *float: left;
+}
+.searchBox01 dd button{
+    display:block;
+    border:none;
+    color: #FFF;
+    height: 100%;
+    width:100%;
+    line-height: 38px;
+    background:none; 
+    font-weight:bold;
+    white-space: nowrap;
+    font-size: 16px;
+}
+
+/*Yahooクレジット*/
+#yahoo-credit{
+    text-align: left;
+    width: 100%;
+}
+#yahoo-credit a{
+    display: inline-block;
+}
+
+/* --- stopBusBox02 お気に入り・履歴 --- */
+.searchBox02{
+/*    margin: 0 15px 120px;bottom広告分+
+    padding: 0 15px;*/
+}
+/* バス停検索結果 */
+.searchBox02 ul li {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#f0f0f0));/* Chrome10+, Safari5.1+ */
+    background: linear-gradient(#fff, #f0f0f0);/* IE10+, W3C */
+    background: -moz-linear-gradient(#fff, #f0f0f0);/* FireFox */
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 ); 
+    
+    margin: 0px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    *background: #f0f0f0;/*IE7対策*/
+}
+/* バス停検索結果(テスト) */
+#sach{
+    /*margin: 0 15px;*/
+    margin: 15px 0 120px;
+}
+#sach li:after {
+    display:block;
+    clear:both;
+    height:0px;
+    visibility:hidden;
+    content:".";
+}
+#sach li {
+    min-height: 1px;
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+* html #sach li {
+    height: 1px;
+    height: auto;
+    overflow: hidden;
+}
+#sach a{
+    display: block;
+    /*background: #fff;*/
+    background: #465262; /* Old browsers */
+    background: -moz-linear-gradient(top, #465262 0%, #20262d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#465262), color-stop(100%,#20262d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #465262 0%,#20262d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #465262 0%,#20262d 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #465262 0%,#20262d 100%); /* IE10+ */
+    background: linear-gradient(bottom, #465262 0%,#20262d 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#465262', endColorstr='#20262d',GradientType=0 ); /* IE6-9 */
+
+    margin: -10px;
+    border-radius:3px;
+}
+#sach .cardHead {
+    display: table;
+/*    color: #000;
+    background: #C2C4CF;*/
+    color: #fff;
+    background: #20262d;
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+}
+#sach .cardHead div,
+#sach .cardFoot div{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px 10px;
+    *display: block;
+    *float: left;
+}
+/*バス停名*/
+#sach .cardName{
+    color: #fff;
+}
+/*ばすていめい*/
+#sach .cardName span{
+    display: block;
+    font-size: 14px;
+}
+
+/*のりば*/
+#sach .bus_stand{
+   font-size: 1.2em;
+    /* display: block;*/
+    padding: 10px;
+    color: #FFBF00;
+}
+#sach .stopNumber{
+    border: 1px solid #FFBF00;
+    border-radius: 3px;
+    display: inline-block;
+    *display: block;/*IE7対策*/
+    *zoom: 1;/*IE7対策*/
+    padding: 1px 3px;
+}
+
+#sach .cardFoot{
+    border-radius: 0 0 3px 3px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    color: #fff;
+}
+/*地域名*/
+#sach .cityInfo{
+    text-align: right;
+    vertical-align: top !important;
+    white-space: nowrap;
+}
+
+.busIcon{
+    text-align: right;
+    width: auto;
+    *float: right !important;
+}
+#sach .busIcon img{
+    width: 50px;
+    margin: 0 3px;
+}
+span.directionInfo{
+    color: #ecf0f1;
+}
+
+@media only screen and (max-width: 780px) {
+    .busIcon{
+        width: 100px;
+    }
+    #sach .busIcon .min img{
+        width: 44px;
+        /*width: 25px;*/ 
+    }
+    #sach .busIcon img{
+        /*width: 44px;*/
+        width: 25px;
+    }
+}
+/**/
+.pageBtn{
+    display: table;
+    table-layout: fixed;
+    *display: inline;/*IE7中央*/
+    *zoom: 1;/*IE7中央*/
+    margin: -100px auto 120px;
+}
+
+.pageBtn form{
+    *float: left;
+    *display: block;
+    display: table-cell;
+    padding: 0 20px;
+}
+.pageBtn form input{
+    width: 44px;
+    height: 44px;
+    background: #888b9f;
+    background: -moz-linear-gradient(top, #888b9f 14%, #696c81 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(14%,#888b9f), color-stop(100%,#696c81));
+    background: -webkit-linear-gradient(top, #888b9f 14%,#696c81 100%);
+    background: -o-linear-gradient(top, #888b9f 14%,#696c81 100%);
+    background: -ms-linear-gradient(top, #888b9f 14%,#696c81 100%);
+    background: linear-gradient(to bottom, #888b9f 14%,#696c81 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888b9f', endColorstr='#696c81',GradientType=0 );
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;/*Safari*/
+    -webkit-appearance: none;/*Safari*/
+    border: solid 2px #5A5E70;
+}
+.pageBtn form input.active{
+    background: #5A5E70 !important;
+    filter:none !important;
+}
+.pageSheet{
+    margin: 0 0 15px;
+    display: block;
+    text-align: center;
+}
+
+
+
+.sectionBox {
+    max-width: 640px;
+    padding: 10px;
+}
+
+
+/*.bannerBox {
+    max-width: 640px;
+    padding: 10px;
+    background: #FFF;
+}*/
+@media only screen and (min-width: 781px) {
+    .btnMore{
+        margin: 0 auto 30px;
+        display: block;
+    }
+}
+.btnMore {
+    /*width: 100%; */
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #888b9f; /* Old browsers */
+    background: -moz-linear-gradient(top,  #888b9f 14%, #696c81 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(14%,#888b9f), color-stop(100%,#696c81)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #888b9f 14%,#696c81 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #888b9f 14%,#696c81 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #888b9f 14%,#696c81 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #888b9f 14%,#696c81 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#888b9f', endColorstr='#696c81',GradientType=0 ); /* IE6-9 */
+    color: #FFF;
+    border-radius: 6px;
+    border: solid 2px #5A5E70;
+}
+
+.logo-kuruken {
+    width: 80px;
+    height: 80px;
+}
+
+/*footer*/
+footer {
+    font-size: 9px;
+    text-align: center;
+}
+.paginator {
+    padding-bottom: 10px;
+}
+.pagination{
+    margin-bottom: 10px;
+}
+/*バスルート メニュー固定*/
+.rote header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#headWrap {
+/*    height: 190px;*/
+    width: 100%;
+    position: fixed;
+    top: 45px;
+    left: 0;
+    z-index: 5;
+/*    -webkit-box-shadow: -1px 3px 7px rgba(50, 50, 50, 0.51);
+    -moz-box-shadow: -1px 3px 7px rgba(50, 50, 50, 0.51);
+    box-shadow: -1px 3px 7px rgba(50, 50, 50, 0.51);*/
+}
+
+/*バス詳細ナビ*/
+.nav ul{
+    display: table;
+    width: 100%;
+}
+.nav li {
+    display: table-cell;
+    width: 25%;
+    text-align: center;
+    *float: left;
+    *width: 33.3%;
+}
+.nav li:first-child a {
+    border-left: none;
+}
+.nav a {
+    color: #848484;
+    display: block;
+    padding: 8px 3px;
+    font-weight: bold;
+    border-left: 1px solid #FFF;
+    background: #DCDCDC;
+}
+.nav li.stay a {
+    color: #2F3B66;
+    background: #F1F1F1;
+}
+#headWrap .stopBusBox01.type01 li {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+ul.navi_prevnext {
+    display: table;
+    width: 100%;
+    padding: 10px 0;
+    background: #D1D1D1;
+}
+ul.navi_prevnext li {
+    color: #B5B5B5;
+    display: table-cell;
+    width: 50%;
+    text-align: center;
+    border-left: 1px solid #2F3B66;
+}
+ul.navi_prevnext li:first-child {
+    border-left: none;
+}
+ul.navi_prevnext li a, ul.navi_prevnext li span {
+    font-size: 17px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-position: 0 45%;
+    background-size: 8px 13px;
+    -moz-background-size: 8px 13px;
+    -webkit-background-size: 8px 13px;
+}
+ul.navi_prevnext li a {
+    color: #000;
+}
+ul.navi_prevnext li.prev a {
+    padding-left: 20px;
+    background-image: url(https://busit.jp/img/common/icon_prev_on.png);
+}
+ul.navi_prevnext li.next a {
+    padding-right: 20px;
+    background-image: url(https://busit.jp/img/common/icon_next_on.png);
+    background-position: 100% 45%;
+}
+
+/**/
+.routeBox01 {
+   /* padding: 265px 0 15px;*/
+	padding: 271px 0 15px;
+    background: #E5E5E5;
+}
+/*ChromeとOperaのみだけに適用*/
+_::content, _:future, .routeBox01:not(*:root) { 
+  padding: 260px 0 15px;
+}
+.routeBox01 .bus_now {
+	position: absolute;
+	top: 38%;
+	right: 0;
+	z-index: 1;
+}
+
+.routeBox01 li:first-child p.bus_now {
+	top: 16%;
+}
+.routeBox01 li {
+    position: relative;
+    padding: 15px 10px 0;
+    font-weight: bold;
+    background-image: url(https://busit.jp/img/common/bg_route_on.png);
+    background-repeat: repeat-y;
+    background-position: 50% 0;
+    background-size: 12px 5px;
+    -moz-background-size: 12px 5px;
+    -webkit-background-size: 12px 5px;
+}
+.routeBox01 li:first-child {
+    padding: 0px 10px 0;
+}
+.routeBox01 .inBox {
+    position: relative;
+}
+.routeBox01 .inBox .row{
+	display: table;
+	padding: 10px 0;
+	width: 100%;
+}
+.routeBox01 .inBox .row [class^="col_"]{
+	display: table-cell;
+	padding: 0 10px;
+	vertical-align: middle;
+	text-align: left;
+}
+.routeBox01 .inBox .col_time{
+    width: 10%;
+}
+.routeBox01 .inBox .col_stop{
+    width: 90%;
+}
+.routeBox01 .inBox .row .col_noriba{
+	padding-right: 0;
+}
+.routeBox01 .inBox .col_Name span{
+    display: block;
+}
+.routeBox01 .inBox .stop_description,
+.routeBox01 .inBox .stop_pay{
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 12px;
+	font-weight: normal;
+	color: #000;
+}
+.routeBox01 .inBox .stop_pay{
+	font-weight: normal;
+    font-size: 12px;
+}
+/**/
+.routeBox01 .bstop_name {
+    margin: 0 auto;
+    font-size: 16px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    background: #FFF;
+}
+
+@media screen and (min-width: 885px) {
+    .routeBox01 .bstop_name {
+        width: 60%;
+    }
+}
+.routeBox01 li.stay .bstop_name {
+    border: 4px solid #202845;
+}
+.routeBox01 .bstop_name .StopName {
+	font-weight: bold;
+}
+.routeBox01 .ruby_name{
+    font-size: 12px;
+    font-weight: normal;
+    display: block;
+}
+.routeBox01 .stop_number{
+    background: #4c79ff;
+    color: #fff;
+    display: block;
+    font-weight: normal;
+    padding: 0;
+    min-width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+.routeBox01 a .stop_number{
+    background: #4c79ff;
+    color: #fff;
+}
+.routeBox01 .stop_number{
+    background: #000;
+    color: #fff;
+}
+.routeBox01 li:first-child .fare {
+    top: 0.8em;
+}
+/*.routeBox01 .arv_time {
+    left: 10px;
+    text-align: left;
+
+    position: absolute;
+    top: 1em;
+    width: 17%;
+}*/
+.routeBox01 li .arv_time{
+	color: #000;
+}
+.routeBox01 li.stay .arv_time {
+    color: #ED271D;
+}
+/*.routeBox01 li:first-child p.arv_time {
+    top: 1em;
+}*/
+#stay {
+    position: relative;
+    margin-top: -300px;
+    padding-top: 300px;
+    z-index: -1;
+}
+
+.halfwayPoint {    
+    text-indent:100%;
+    white-space:nowrap;/*android対策(text-indent不具合)*/
+    overflow:hidden;/*android対策(text-indent不具合)*/
+    height: 10px;
+}
+/*時刻表*/
+ul.navi_timetable {
+    position: relative;
+    padding: 15px 20px 0;
+    overflow: hidden;
+    background: #F1F1F1;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+ul.navi_timetable li {
+    *float: left;
+    *width: 33%;
+    display: table-cell;
+}
+ul.navi_timetable li span {
+    display: block;
+    font-weight: bold;
+    margin-left: 2px;
+    padding: 6px 0 4px;
+    color: #848484;
+    background: #E1E1E1;
+}
+
+ul.navi_timetable li.type01 span{
+    margin-left: 0;
+    border: 1px solid #E1E1E1;
+    border-bottom: none;
+    background: #fff;
+}
+ul.navi_timetable li.type02 span {
+    color: #1980B2;
+    background: #D0F3FF;
+}
+ul.navi_timetable li.type03 span {
+    color: #848484;
+    background: #FFDDDD;
+}
+ul.navi_timetable li.type04 span {
+    color: #000;
+    background: #cddc39;
+}
+ul.navi_timetable li.type05 span {
+    color: #000;
+    background: #ffeb3b;
+}
+.timetableBox{
+    margin-top: -1px;
+    padding: 15px 10px;
+    text-align: left;
+    border-top: 1px solid #E1E1E1;
+}
+.ttl_type02 {
+    color: #2D3966;
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.timetableBox.type01 {
+    background: #FFF;
+}
+.timetableBox.type02 {
+    background: #D0F3FF;
+}
+.timetableBox.type03 {
+    background: #FFDDDD;
+}
+.timetableBox.type04 {
+    background: #cddc39;
+}
+.timetableBox.type05 {
+    background: #ffeb3b;
+}
+
+/* timetable */
+table.timetable {
+    border: 2px solid #C9C9C8;
+    width: 100%;
+}
+table.timetable th,
+table.timetable td {
+    font-size: 14px;
+    vertical-align: top;
+    border-top: 1px solid #CCCCCB;
+    background: #FFF;
+}
+table.timetable th{
+    padding: 7px 5px 2px;
+    width: 1.5em;
+    text-align: center;
+    border-right: 1px solid #CCCCCB;
+    background: #ECECEB;
+}
+table.timetable td{
+    padding: 7px 5px 2px 0;
+}
+table.timetable tr:first-child th,
+table.timetable tr:first-child td {
+    border-top: none;
+}
+/*----*/
+table.timetable td ul {
+    overflow: hidden;
+}
+table.timetable td li {
+    float: left;
+    padding: 0 0 3px 12px;
+    font-size: 14px;
+}
+/*運行会社*/
+.companyInfoBox {
+    padding: 20px 10px;
+    text-align: left;
+}
+.companyInfoBox .comp_address {
+    margin: 10px 0;
+    font-size: 15px;
+}
+.boxList {
+    border: solid #CCC 1px;
+    background: #FFF;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.box {
+    display: table;
+    padding: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    border-bottom: solid #CCC 1px;
+}
+.boxLeft {
+    display: table-cell;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+.boxRight {
+    display: table-cell;
+    text-align: right;
+    color: #999999;
+    font-size: 14px;
+    word-break: break-all;
+}
+.boxRight a {
+    color: #999999;
+    font-size: 14px;
+    background: url(https://busit.jp/img/common/icon_list.png) 98% center no-repeat;
+    background-size: 8px 11px;
+    padding-right: 20px;
+}
+/* /maps/search.html */
+#map-timetable{
+    border-spacing: 1px;
+    margin-top: 10px;
+    border-top: 1px solid #232C4C;
+    width: 100%;
+    padding-top: 10px;
+}
+#map-timetable td{
+    vertical-align: middle;
+}
+#map-timetable .num{
+    border: #ff9800 solid 2px;
+    color: #ff9800;
+    margin-right: 5px;
+    font-size: small;
+    padding: 0 2px;
+}
+#map-timetable .route{
+    font-size: smaller;
+    color: #ff9800;
+	font-weight: 500;
+}
+#map-timetable .terminal{
+    font-size: 14px;
+	color: #000;
+}
+#map-timetable tr.table-list{
+    border-bottom: 1px dotted #232C4C;
+}
+#map-timetable tr.table-list:last-child{
+    border-bottom: none;
+}
+#map-timetable .time{
+    font-size: 14px;
+	color: #000;
+}
+#map-timetable .col{
+    display:table-cell;
+    padding: 5px;
+    vertical-align: middle;
+}
+/**/
+#pageMap{
+    background: #f4f4f4;
+}
+#pageMap header,
+header#mapList{
+    height: 79px;
+    position: relative;
+}
+#pageMap .content{
+    bottom: 0;
+    overflow: hidden;
+/*    margin-top: 79px;
+    position: absolute;*/
+    width: 100%;
+}
+#mapList .content{
+    bottom: 0;
+    margin-top: 79px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+#pageMap .nav,
+#mapList .nav{
+    border-bottom: 1px solid #c5c5c5;
+}
+/*ご利用ガイド、免責事項*/
+#pageBox {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 1.2em;
+    line-height: 1.7;
+    text-align: left;
+}
+#pageBox p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+#pageBox img{
+    width: 100%;
+    max-width: 1000px;
+}
+.pageTtl{
+    text-align: center;
+    margin: 20px 0 15px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.searchHead {
+    color: #5A5E70;
+    background: #D1D2DA;
+    padding: 0.4em;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+@media screen and (max-width: 780px) {
+    #pageBox img{
+        width: 100%;
+    }
+}
+#pageBox button{
+    background: #232C4C;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 30px auto;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+}
+@media only screen and (max-width: 780px){
+    #pageBox button {
+        width: 80%;
+        max-width: 630px;
+    }
+}
+#def-list{
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+#def-list dt{
+    font-size: 16px;
+    font-weight: bold;
+    background: #fff;
+    padding: 5px 1em;
+    margin: 2em 0 .5em;
+    border-radius: 3px;
+}
+#def-list dd{
+    margin: 0 2em;
+}
+#def-list dd ol {
+    margin-left: 1.5em;
+}
+#def-list dd ol li {
+    margin-bottom: .5em;
+    list-style-type: decimal;
+}
+@media only screen and (max-width: 375px){
+    #def-list dd{
+        margin: 0 1em;
+    }
+}
+/*モーダルウィンドウ*/
+.modal-window {
+    -webkit-transform: translate(0, 100%);
+    -moz-transform: translate(0, 100%);
+    -o-transform: translate(0, 100%);
+    -ms-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999;
+    opacity: 0;
+    line-height: 1.3;
+    display: none\9;/*IE∼9対策*/
+}
+.modal-window:target {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.is-active.modal-window {
+    display: block\9;/*IE∼9対策*/
+}
+.modal-window:target {
+    display: block\9;/*IE∼9対策*/
+}
+.modal-window .modal-inner {
+    padding: 20px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform:  translateX(-50%);
+    z-index: 20;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    overflow-x: hidden;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+.modal-window .modal-inner p {
+    padding: 10px 20px;
+    font-size: 16px;
+    background:#EEEEEE;
+}
+.modal-scroll {
+    height: 300px;
+    overflow: scroll;
+}
+
+.modal-window .modal-inner ul li {
+    padding: 16px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background:#FFF;
+    border-bottom: 1px solid #CCC;
+}
+
+.modal-window .modal-inner ul a{
+    color: #000;
+}
+
+.modal-window .modal-inner ul li a.check{
+    background: #FFF url(https://busit.jp/img/common/icon_check.png) no-repeat 20px center;
+    background-size: 18px;
+    display: block;
+}
+
+.modal-window .modal-inner div {
+    padding: 16px 20px;
+    font-size: 16px;
+    background:#FFF;
+    border-bottom: 1px solid #CCC;
+}
+
+.modal-window .modal-close {
+    display: block;
+    text-indent: -100px;
+    overflow: hidden;
+}
+.modal-window .modal-close:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAEElEQVR42gEFAPr/AAAAAMwA0QDNTiUx4gAAAABJRU5ErkJggg==");
+}
+
+.modal-window {
+    -webkit-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+
+.cursor {
+    cursor: default!important;
+}
+
+.cursor a{
+    cursor: default!important;
+}
+
+
+.boxList {
+    border: solid #CCC 1px;
+    background: #FFF;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.box {
+    display: table;
+    padding: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    border-bottom: solid #CCC 1px;
+}
+
+.boxLeft {
+    display: table-cell;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.boxRight {
+    display: table-cell;
+    text-align: right;
+    color: #999999;
+    font-size: 14px;
+    word-break:break-all;
+}
+
+.boxRight a{
+    color: #999999;
+    font-size: 14px;
+    background:url(https://busit.jp/img/common/icon_list.png) 98% center no-repeat;
+    background-size: 8px 11px;
+    padding-right: 20px;
+}
+
+.btnLink {
+    font-weight: bold;
+    background: #262F52;
+    padding: 14px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.btnLink a{
+    color: #FFF;
+    display: block;
+    background:url(https://busit.jp/img/common/icon_btn.png) 99% center no-repeat;
+    background-size: 8px 11px;
+}
+
+.nfTtl {
+    color: #283258;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button.back{
+    background: #232C4C;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+    width: 150px;
+}
+@media only screen and (max-width: 780px){
+    button.back{
+        width: 50%;
+        max-width: 300px;
+    }
+}
+
+/*　時刻表（各社サイトリスト）*/
+.bus-company a{
+    display: block;
+    vertical-align: middle;
+    background: url(https://busit.jp/img/common/icon_arw01.png) no-repeat center right;
+    margin: 0 10px;
+    line-height: 40px;
+}
+.bus-company a img{
+    width: 35px;
+    margin-right: 10px;
+}
+
+
+
+/* ----------------------------------------------
+ 画面サイズ 780以下
+---------------------------------------------- */
+@media only screen and (max-width: 780px) {
+    .burger {
+        display: table-cell;
+    }
+       
+    .bannerBox {
+        max-width: 100%;
+        padding: 0px;
+        background: #FFF;
+    }
+    
+    .bannerBox img {
+        width: 320px;
+        height: 100px;
+    }
+
+    /* メインイメージ */
+    .main-img {
+        width: 100%;
+    }
+    
+    .mbwide100 {
+        width: 100%;
+        max-width:630px;
+    }
+
+    /* くるけん ロゴ */
+/*    .logo-kuruken {
+        width: 75px;
+        height: 75px;
+    }*/
+
+    /* */
+    .header-section {
+        margin-top: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+    .body-section,
+    .footer-section {
+    }
+
+}
+
+
+/*PTimeTable*/
+.PTimeTable01{
+    text-align: right;
+}
+.PTimeTable01 a{
+    display: inline-block;
+    background: #8ABA28;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+}
+.PTimeTable01 a span{
+    font-size: 12px;
+    display: block;
+}
+
+
+.form p{
+    text-align: left;
+}
+.form p.align_c{
+    text-align: center;    
+}
+/*======= other ==================================================*/
+
+
+/* [font-size] -------------- */
+.f10 { font-size: 10px; }
+.f11 { font-size: 11px; }
+.f12 { font-size: 12px; }
+.f13 { font-size: 13px; }
+.f14 { font-size: 14px; }
+.f15 { font-size: 15px; }
+.f16 { font-size: 16px; }
+.f17 { font-size: 17px; }
+.f18 { font-size: 18px; }
+.f19 { font-size: 19px; }
+.f20 { font-size: 20px; }
+
+/* [font-weight] ------------ */
+.fw_n { font-weight: normal; }
+.fw_b { font-weight: bold; }
+
+/* [line-height] ------------ */
+.lh18 { line-height: 1.8; }
+
+/* [color] ------------------ */
+.fc_orng01 { color: #FF5505; } /* orange */
+.fc_mosgre01 { color: #416318; } /* moss green */
+
+/* [align] ------------------ */
+.align_l { text-align: left; }
+.align_r { text-align: right; }
+.align_c { text-align: center; }
+
+/* [margin,padding] ----------------- */
+.mb0 { margin-bottom: 0 !important; }
+.mr5 { margin-right: 5px; }
+.mb5 { margin-bottom: 5px; }
+.mt10 { margin-top: 10px; }
+.mb10 { margin-bottom: 10px !important; }
+.ml10, .mh10 { margin-left: 10px; }
+.mr10, .mh10 { margin-right: 10px; }
+.mt15 { margin-top: 15px !important; }
+.mb15 { margin-bottom: 15px; }
+.mt20 { margin-top: 20px !important; }
+.mb20 { margin-bottom: 20px; }
+.mb30 { margin-bottom: 30px; }
+.mb40 { margin-bottom: 40px; }
+.mt40 { margin-top: 40px; }
+/*----*/
+.mh-10 { margin: 0 -10px; }
+/*----*/
+.pt10 { padding-top: 10px; }
+.pt40 { padding-top: 40px; }
+.pl10, .ph10 { padding-left: 10px; }
+.pr10, .ph10 { padding-right: 10px; }
+.pb25 { padding-bottom: 25px; }
+
+/* 臨時便　ボタン及びモーダル表示 ↓↓↓↓↓↓------------------ */
+a.extraBuses-btn{
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+a.extraBuses-btn:hover .extraBuses-btn-left{
+    box-shadow: 0 0 0 #FFF;
+    background-color: #764445;
+}
+a.extraBuses-btn:hover .extraBuses-btn-right{
+    box-shadow: 0 0 0 #FFF;
+    background-color: #4c1b18;
+}
+.extraBuses-btn-right{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 0;
+    display: inline-block;
+    width: 30%;
+    color: #fff;
+    background-color: #8a1c1a;
+    box-shadow: 0 3px 0 #4c1b18;
+    border-radius: 0 4px 4px 0;
+    -webkit-border-radius: 0 4px 4px 0;
+    -moz-border-radius: 0 4px 4px 0;
+    -ms-border-radius: 0 4px 4px 0;
+    -o-border-radius: 0 4px 4px 0;
+}
+.extraBuses-btn-left{
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-block;
+    width: 70%;
+    color: #fff;
+    padding: 10px 0;
+    background-color:#b82522;
+    box-shadow: 0 3px 0 #764445;
+    border-radius: 4px 0 0 4px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    -ms-border-radius: 4px 0 0 4px;
+    -o-border-radius: 4px 0 0 4px;
+}
+.extraBuses-title{
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #b82522!important;
+}
+
+.modal-window .modal-inner .stopBusBox01 li{
+    list-style-type: none;
+}
+.modal-window .modal-inner .stopBusBox01 div {
+    background: transparent;
+    border-bottom: 0;
+    padding:0;
+}
+.modal-window .modal-inner .stopBusBox01 p {
+    background: transparent;
+}
+.extraBuses-window .status{
+    padding: 0!important;
+}
+.extraBuses-window li{
+    cursor: auto!important;
+}
+.extraBuses-window .stopBusBox01 .head{
+    height: 27px;
+}
+.extraBuses-window .foot{
+    display: block;
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+}
+.extraBuses-window .foot p{
+    background: #d9d9d9;
+}
+.extraBuses-window .foot p:hover{
+    background: #999;
+}
+.extraBuses-window .company{
+    padding: 0!important;
+}
+.extraBuses-window .modal-scroll{
+    background: #ebebeb!important;
+    overflow-x: hidden;
+}
+.extraBuses-window .num{
+    font-size: 12px!important;
+}
+@media (max-width: 375px) {
+    .modal-window .modal-inner {
+        top: 5%;
+    }
+    .modal-window .modal-inner div{
+        padding: 15px;
+    }
+    .extraBuses-btn-left,
+    .extraBuses-btn-right{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width:694px){
+    
+    .modal-window .modal-inner {
+        width: 80%;
+     }
+ }
+ @media screen and (max-height: 414px){
+     .modal-window .modal-inner {
+        top: 0;
+        width: 80%;
+     }
+     .modal-scroll{
+         height: 58vh;
+     }
+ }
+ @media screen and (max-height: 320px){
+    .modal-window .modal-inner {
+        padding: 0;
+        top: 3%;
+    }
+ }
+/* 臨時便　ボタン及びモーダル表示 ↑↑↑↑↑↑------------------ */
+
+/* 「現在地から探す」Mapbox ↓↓↓↓ ------------------------ */
+.mapboxgl-popup-content a {
+    outline: none !important;
+}
+/* 「現在地から探す」Mapbox ↑↑↑↑ ------------------------ */

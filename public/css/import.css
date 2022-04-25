@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+@import "reset.css";
+@import "trunk2.css";
+@import "trunk-override.css";
+@import "busit-main.css";
+
+/* -----------------------------------------------
+後ろのほうが重要視されるので順番は変更しない
+resetとtrunkはオリジナルのままであり基本的には変更しない
+trunk-overrideでtrunkの機能を上書きする
+busit-mainでbusitの基本装飾を記述する
+font.cssは別途読み込む
+----------------------------------------------- */

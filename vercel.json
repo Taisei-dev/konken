@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "routes": [
+      { "src": "/","dest": "/public/index.html" },
+      { "src": "/api/autocomplete","dest": "api/autocomplete.py" },
+      { "src": "/search/on","dest": "api/search.py" },
+      { "src": "/trip","dest": "api/trip.py" },
+      { "src": "/stop","dest": "api/stop.py" },
+      { "src": "/(.*)","dest": "/public/$1" }
+    ]
+}
