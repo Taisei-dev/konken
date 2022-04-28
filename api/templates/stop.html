@@ -24,183 +24,185 @@
 <![endif]-->
 
 <script async=“async” src="../client/towncreation/flux_busit_AS_PB_AT.min.js" type="text/javascript"></script>
- <script type="text/javascript">
-   var pbjs = pbjs || {};
-   pbjs.que = pbjs.que || [];
- </script>
+<script type="text/javascript">
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+</script>
 
 </head>
 <body>
 
-	<!--言語切り替え-->
+    <!--言語切り替え-->
 <section class="modal-window" id="modal-p01">
-	<div class="modal-inner">
-		<p>Change Language</p>
-		<ul>
-							<li><a class="" href="/stop/0001001?lang=ja">日本語</a></li>
-							<li><a class="check" href="/stop/0001001?lang=en">English</a></li>
-							<li><a class="" href="/stop/0001001?lang=ko">&#54620;&#44397;&#50612;</a></li>
-							<li><a class="" href="/stop/0001001?lang=zh_CN">&#x4E2D;&#x6587;&#xFF08;&#x7B80;&#x4F53;&#xFF09;</a></li>
-							<li><a class="" href="/stop/0001001?lang=zh_TW">&#x4E2D;&#x6587;&#xFF08;&#x7E41;&#x9AD4;&#xFF09;</a></li>
-					</ul>
-	</div>
-	<a href="0001001.html#!" class="modal-close"></a>
+    <div class="modal-inner">
+        <p>Change Language</p>
+        <ul>
+                            <li><a class="" href="/stop/0001001?lang=ja">日本語</a></li>
+                            <li><a class="check" href="/stop/0001001?lang=en">English</a></li>
+                            <li><a class="" href="/stop/0001001?lang=ko">&#54620;&#44397;&#50612;</a></li>
+                            <li><a class="" href="/stop/0001001?lang=zh_CN">&#x4E2D;&#x6587;&#xFF08;&#x7B80;&#x4F53;&#xFF09;</a></li>
+                            <li><a class="" href="/stop/0001001?lang=zh_TW">&#x4E2D;&#x6587;&#xFF08;&#x7E41;&#x9AD4;&#xFF09;</a></li>
+                    </ul>
+    </div>
+    <a href="#!" class="modal-close"></a>
 </section>
 <!--/言語切り替え-->
-	<div class="mask slide"></div>
+    <div class="mask slide"></div>
 
-	<div class="fav">
-		<div class="fav-inner">
-			<p class="on">お気に入りに追加しました</p>
-			<p class="no">お気に入りを解除しました</p>
-			<a href="0001001.html#" class="close">閉じる</a>
-		</div>
-	</div>
+    <div class="fav">
+        <div class="fav-inner">
+            <p class="on">お気に入りに追加しました</p>
+            <p class="no">お気に入りを解除しました</p>
+            <a href="#" class="close">閉じる</a>
+        </div>
+    </div>
 
-	<!--のりば切り替え-->
-	<section class="modal-window" id="modal-p02">
-		<div class="modal-inner">
-			<p>のりば切り替え</p>
-			<div class="modal-scroll">
-																								<div><a href="/stop/0001050">
-							広島バスセンター																					<br />
-															 Hiroshima Bus Center														<br />
-															 for drop only, Hiroshima Sta.														</a>
-						</div>
-												</div>
-		</div>
-		<a href="#!" class="modal-close"></a>
-	</section>
-	<!--/のりば切り替え-->
-	<!--/臨時便-->
-	<section class="modal-window extraBuses-window" id="modal-p03">
-		<div class="modal-inner">
-			<p class="extraBuses-title">ただいま運行中の臨時便</p>
-			<div class="modal-scroll stopBusBox01 type01">
-							</div>
-			<a href="0001001.html#!" class="foot"><p>閉じる</p></a>
-		</div>
-		<a href="0001001.html#!" class="modal-close"></a>
-	</section>
-	<!--/臨時便-->
+    <!--のりば切り替え-->
+    <section class="modal-window" id="modal-p02">
+        <div class="modal-inner">
+            <p>のりば切り替え</p>
+            <div class="modal-scroll">
+                <div>
+                    <a href="/stop/0001050">
+                            広島バスセンター<br />
+                            Hiroshima Bus Center<br />
+                            for drop only, Hiroshima Sta.
+                    </a>
+            </div>
+            </div>
+        </div>
+        <a href="#!" class="modal-close"></a>
+    </section>
+    <!--/のりば切り替え-->
+    <!--/臨時便-->
+    <section class="modal-window extraBuses-window" id="modal-p03">
+        <div class="modal-inner">
+            <p class="extraBuses-title">ただいま運行中の臨時便</p>
+            <div class="modal-scroll stopBusBox01 type01">
+                            </div>
+            <a href="#!" class="foot"><p>閉じる</p></a>
+        </div>
+        <a href="#!" class="modal-close"></a>
+    </section>
+    <!--/臨時便-->
 
-	<div id="container">
-		<header class="slide">
-			<div id="header">
-			<h1 id="ttl"><a href="/" ><img src="../img/common/logo.png" width="120" alt="バスイット"></a></h1>
-				<p id="favorite">
-			<a href="javascript:void(0)" onclick="favorite('0001001')" title="お気に入り">
-				<span style="height: 25px; overflow: hidden; display: block;">
-											<img src="../img/common/icon_favo.png" width="35" height="35" alt="お気に入り" style="margin: -2px auto 0;text-align: center;display: block;">
-									</span>				
-				<span style="font-size: 11px;color: #fff;display: inline-block;">お気に入り</span>
-			</a>
-		</p>
-		<p id="language"><a href="#modal-p01">Lang</a></p>
-	<p class="menu"><img src="../img/common/icon_navi.png" width="45" height="45" id="navToggle" class="burger slide" alt=""></p>
+    <div id="container">
+        <header class="slide">
+            <div id="header">
+            <h1 id="ttl"><a href="/" ><img src="../img/common/logo.png" width="120" alt="バスイット"></a></h1>
+                <p id="favorite">
+            <a href="javascript:void(0)" onclick="favorite('0001001')" title="お気に入り">
+                <span style="height: 25px; overflow: hidden; display: block;">
+                                            <img src="../img/common/icon_favo.png" width="35" height="35" alt="お気に入り" style="margin: -2px auto 0;text-align: center;display: block;">
+                                    </span>				
+                <span style="font-size: 11px;color: #fff;display: inline-block;">お気に入り</span>
+            </a>
+        </p>
+        <p id="language"><a href="#modal-p01">Lang</a></p>
+    <p class="menu"><img src="../img/common/icon_navi.png" width="45" height="45" id="navToggle" class="burger slide" alt=""></p>
 </div>
-		</header>
-		<nav class="slide">
-	<ul>
-		<li class="navttl"><img src="../img/common/logo-top.png" alt="BUSit-バスイット"></li>
-		<li><a href="/favorite/?StopID=0001001"><i class="icon icon-star"></i>お気に入り</a></li>
-					<li><a href="/history/?stop_id=0001001"><i class="icon icon-time"></i>履歴</a></li>
-															<li><a href="/stop/map/0001001"><i class="icon icon-map"></i>地図を見る</a></li>
-							<li><a href="/search/on?stop_id=0001001&amp;latlon=34.396353%2C132.455824"><i class="icon icon-search"></i>バス停検索</a></li>
-				<li><a href="/ptimetable/0001001"><i class="icon icon-bus"></i>各バス会社リンク先</a></li>
-		<li><a href="/feedback/stop/0001001"><i class="icon icon-report"></i>問題を報告</a></li>
-		<li><a href="/stop/guide/0001001"><i class="icon icon-beginner"></i>使い方</a></li>
-		<li><a href="/stop/disclaimer/0001001"><i class="icon icon-guide"></i>Disclaimer</a></li>
-		<!-- <li><a href="https://www.towncreation.com/product/busit-ad/stop_ad/" target="_blank"><i class="icon icon-image"></i>広告募集</a></li> -->
-	</ul>
+        </header>
+        <nav class="slide">
+    <ul>
+        <li class="navttl"><img src="../img/common/logo-top.png" alt="BUSit-バスイット"></li>
+        <li><a href="/favorite/?StopID=0001001"><i class="icon icon-star"></i>お気に入り</a></li>
+                    <li><a href="/history/?stop_id=0001001"><i class="icon icon-time"></i>履歴</a></li>
+                                                            <li><a href="/stop/map/0001001"><i class="icon icon-map"></i>地図を見る</a></li>
+                            <li><a href="/search/on?stop_id=0001001&amp;latlon=34.396353%2C132.455824"><i class="icon icon-search"></i>バス停検索</a></li>
+                <li><a href="/ptimetable/0001001"><i class="icon icon-bus"></i>各バス会社リンク先</a></li>
+        <li><a href="/feedback/stop/0001001"><i class="icon icon-report"></i>問題を報告</a></li>
+        <li><a href="/stop/guide/0001001"><i class="icon icon-beginner"></i>使い方</a></li>
+        <li><a href="/stop/disclaimer/0001001"><i class="icon icon-guide"></i>Disclaimer</a></li>
+        <!-- <li><a href="https://www.towncreation.com/product/busit-ad/stop_ad/" target="_blank"><i class="icon icon-image"></i>広告募集</a></li> -->
+    </ul>
 </nav><!--/drawer-->
-		<div class="content slide">
-			<section>
-				<div id="bstop_ttlBox">
-					<!--バス停名-->
-					<div id="area">
+        <div class="content slide">
+            <section>
+                <div id="bstop_ttlBox">
+                    <!--バス停名-->
+                    <div id="area">
                         <p class="mark">1</p>
-						<div class="busStopName" itemscope itemtype="http://schema.org/BusStop">
-							<span class="bstop_furi" itemprop="name"></span><span class="bstop_name" itemprop="name"></span><span class="bstop_furi" itemprop="alternateName"></span>
-						</div>
-					</div>
-					<!--/バス停名-->
+                        <div class="busStopName" itemscope itemtype="http://schema.org/BusStop">
+                            <span class="bstop_furi" itemprop="name"></span><span class="bstop_name" itemprop="name"></span><span class="bstop_furi" itemprop="alternateName"></span>
+                        </div>
+                    </div>
+                    <!--/バス停名-->
 
-					<div id="bstop_control" class="clearfix">
-						<!--目的地設定-->
-						<p class="goal">目的地:<a href="/search/to/0001001">未設定</a></p>
-						<!--/目的地設定-->
-						<!-- 更新 -->
-						<p class="update"><a onclick="window.location.reload()"><i class="icon icon-update"></i>更新</a></p>
-						<!--のりば切り替え-->
-						<p class="change"><a href="#modal-p02"><i class="icon icon-change"></i>のりば切り替え</a></p>
-						<!--/のりば切り替え-->
-					</div><!--/bstop_control-->
+                    <div id="bstop_control" class="clearfix">
+                        <!--目的地設定-->
+                        <p class="goal">目的地:<a href="/search/to/0001001">未設定</a></p>
+                        <!--/目的地設定-->
+                        <!-- 更新 -->
+                        <p class="update"><a onclick="window.location.reload()"><i class="icon icon-update"></i>更新</a></p>
+                        <!--のりば切り替え-->
+                        <p class="change"><a href="#modal-p02"><i class="icon icon-change"></i>のりば切り替え</a></p>
+                        <!--/のりば切り替え-->
+                    </div><!--/bstop_control-->
 
-				</div>
-				<!--到着バス・所要時間-->
-				<div class="stopBusBox01 type01">
+                </div>
+                <!--到着バス・所要時間-->
+                <div class="stopBusBox01 type01">
                     <ul>
 
                     </ul>
                     <p class="btnMore">もっとみる(次の10件を表示)</p>
                     <p class="overFlow" style="visibility: hidden">以上で本日の運行は終了です。</p>
                 </div>
-				<!--/到着バス・所要時間-->
-			</section>
-		</div>
-	</div>
-	
-	<script async type="text/javascript" src="../js/favorite.js"></script>
-	<script type="text/javascript">
-		/**
-		 * お気に入り登録/解除
-		 */
-		function favorite(stopId) {
-			$.ajaxSetup({
-				headers: {
-					'X-CSRF-TOKEN': "8c9a83b26f39c6bafe54afdfba6f8d2729f936e9600ac5e84c72c0f155248a25f07075d078d4c0522a121c1e37694c095a6af06a03e6d8ed24ac72b4deb10ae4"				}
-			});
-			$.post(
-				'/stop/favorite/add/0001001',
-				{
-					'stopId': stopId
-				},
-				function (data, status) {
-					$('#favorite a').html(data);
-				},
-				"html"
-			);
-		}
+                <!--/到着バス・所要時間-->
+            </section>
+        </div>
+    </div>
+    
+    <script async type="text/javascript" src="../js/favorite.js"></script>
+    <script type="text/javascript">
+        /**
+         * お気に入り登録/解除
+         */
+        function favorite(stopId) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': "8c9a83b26f39c6bafe54afdfba6f8d2729f936e9600ac5e84c72c0f155248a25f07075d078d4c0522a121c1e37694c095a6af06a03e6d8ed24ac72b4deb10ae4"				}
+            });
+            $.post(
+                '/stop/favorite/add/0001001',
+                {
+                    'stopId': stopId
+                },
+                function (data, status) {
+                    $('#favorite a').html(data);
+                },
+                "html"
+            );
+        }
 
 
-	</script>
-	<script type="text/javascript">
-		/**
-		 * 次の x 件表示
-		 * 操作対象の html よりも前に記述すること
-		 * 後に記述すると非表示の要素が一瞬表示されてしまう
-		 */
-		$(function () {
-			var $c = 10;
-			var $s = 0;
-			var $e = $c;
-			$shownext = function () {
-				$('.buscard').slice($s, $e).css('display', 'block');
-				$s = $e;
-				$e = $s + $c;
-				if ($('.buscard').slice($s, $e).length < 1) {
-					$('.btnMore').hide();
-					$('.overFlow').css('visibility', 'visible');
-				}
-			};
-			$('.buscard').css('display', 'none');
-			$shownext();
-			$('.btnMore').on('click', function () {
-				$shownext();
-			});
-		});
-	</script>
+    </script>
+    <script type="text/javascript">
+        /**
+         * 次の x 件表示
+         * 操作対象の html よりも前に記述すること
+         * 後に記述すると非表示の要素が一瞬表示されてしまう
+         */
+        $(function () {
+            var $c = 10;
+            var $s = 0;
+            var $e = $c;
+            $shownext = function () {
+                $('.buscard').slice($s, $e).css('display', 'block');
+                $s = $e;
+                $e = $s + $c;
+                if ($('.buscard').slice($s, $e).length < 1) {
+                    $('.btnMore').hide();
+                    $('.overFlow').css('visibility', 'visible');
+                }
+            };
+            $('.buscard').css('display', 'none');
+            $shownext();
+            $('.btnMore').on('click', function () {
+                $shownext();
+            });
+        });
+    </script>
     <div id="kurukendata" style="display:none">
     {{ response | safe }}
     </div>
