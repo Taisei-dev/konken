@@ -96,20 +96,20 @@
 				<span style="font-size: 11px;color: #fff;display: inline-block;">お気に入り</span>
 			</a>
 		</p>
-		<p id="language"><a href="0001001.html#modal-p01">Lang</a></p>
+		<p id="language"><a href="#modal-p01">Lang</a></p>
 	<p class="menu"><img src="../img/common/icon_navi.png" width="45" height="45" id="navToggle" class="burger slide" alt=""></p>
 </div>
 		</header>
 		<nav class="slide">
 	<ul>
 		<li class="navttl"><img src="../img/common/logo-top.png" alt="BUSit-バスイット"></li>
-		<li><a href="/favorite/?StopID=0001001"><i class="icon icon-star"></i>My Favorites</a></li>
-					<li><a href="/history/?stop_id=0001001"><i class="icon icon-time"></i>History</a></li>
-															<li><a href="/stop/map/0001001"><i class="icon icon-map"></i>See the map</a></li>
-							<li><a href="/search/on?stop_id=0001001&amp;latlon=34.396353%2C132.455824"><i class="icon icon-search"></i>Search bus stop</a></li>
+		<li><a href="/favorite/?StopID=0001001"><i class="icon icon-star"></i>お気に入り</a></li>
+					<li><a href="/history/?stop_id=0001001"><i class="icon icon-time"></i>履歴</a></li>
+															<li><a href="/stop/map/0001001"><i class="icon icon-map"></i>地図を見る</a></li>
+							<li><a href="/search/on?stop_id=0001001&amp;latlon=34.396353%2C132.455824"><i class="icon icon-search"></i>バス停検索</a></li>
 				<li><a href="/ptimetable/0001001"><i class="icon icon-bus"></i>各バス会社リンク先</a></li>
 		<li><a href="/feedback/stop/0001001"><i class="icon icon-report"></i>問題を報告</a></li>
-		<li><a href="/stop/guide/0001001"><i class="icon icon-beginner"></i>BUSit User's Guide</a></li>
+		<li><a href="/stop/guide/0001001"><i class="icon icon-beginner"></i>使い方</a></li>
 		<li><a href="/stop/disclaimer/0001001"><i class="icon icon-guide"></i>Disclaimer</a></li>
 		<!-- <li><a href="https://www.towncreation.com/product/busit-ad/stop_ad/" target="_blank"><i class="icon icon-image"></i>広告募集</a></li> -->
 	</ul>
@@ -206,8 +206,19 @@
     </div>
     <script>
         var data=document.querySelector("#kurukendata");
-        document.querySelector('span.bstop_name').innerText=document.title=document.querySelector('p.resultSekkinStationName').innerText;
+        var stationname=document.querySelector('p.resultSekkinStationName').innerText;
+        if(stationname.search('：')!=-1){
+            document.querySelector('span.bstop_name').innerText=stationname.substring(0,stationname.search('：')-1);
+            document.title=document.querySelector('span.bstop_name').innerText+' のりば'+document.querySelector('#area p.mark').innerText;
+            document.querySelector('#area p.mark').innerText=stationname.substr(stationname.search('：')+1,stationname.length-1);
+        }
+        else{
+            document.querySelector('span.bstop_name').innerText=stationname;
+            document.title=document.querySelector('span.bstop_name').innerText;
+            document.querySelector('#area p.mark').style.display='none';
+        }
         var parent=document.querySelector('div.stopBusBox01 ul');
+        var imgbycomid={"bus-73086101":3,"bus-73008250":4,"bus-73385130":5,"bus-73385140":6,"bus-73308150":7,"bus-72700110":8,"bus-73900430":9,"bus-73208220":10,"bus-73805130":13,"bus-73885010":29,"bus-73785010":39,}
         var trips=document.querySelectorAll('#approach_list_for_daiya li.approachDtlCard');
         trips.forEach(trip=>{
             var li=document.createElement('li');
@@ -220,7 +231,7 @@
                         '   <p>'+'<!--<span class="incompatible">バスロケ未受信</span>-->'+(trip.querySelector('td.BusType div.NonStep')?'<span class="nonStep">ノンステップ</span>':'')+(trip.querySelector('td.BusType div.OneStep')?'<span class="oneStep">ワンステップ</span>':'')+(trip.querySelector('td.BusSlope div.none')?'':'<span class="nonStep">スロープ</span>')+'<!--<span class="extraordinary">臨時便</span>-->'+'</p>'+
                         '</div>'+
                         '<div class="btm">'+
-                        '   <p class="company">'+'<img src="../img/bus/icon_3.png" width="44" alt="防長交通" />'+'</p>'+
+                        '   <p class="company">'+'<img src="../img/bus/icon_'+imgbycomid[trip.classList[0]]+'.png" width="44"/>'+'</p>'+
                         '   <div class="bordBox">'+
                         '       <div class="inBox">'+
                         '           <p class="num">'+trip.querySelector('td.KeitouNo').innerText+'</p>'+
@@ -240,7 +251,7 @@
             parent.appendChild(li);
         });
         function resultByCourse(stationSid, courseSid, companyId, busId, keiyuCd, daiyaSid, courseNo, ikisakiName, ikisakiKeiyuName, displayCompanyId, teikokuTime, redraw) {
-            window.location.href='/trip?sid='+daiyaSid;
+            window.location.href='/trip?daiyasid='+daiyaSid+'&stationsid='+stationSid;
         }
     </script>
 </body>

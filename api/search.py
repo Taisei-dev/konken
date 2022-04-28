@@ -20,7 +20,7 @@ def search():
             req=urllib.request.Request('https://kuruken.jp/Approach/GetStationsForModalDialogByNoriba?selectLang=ja&startStaCode='+station['StationCode']+'&startCompId='+stationcorrection[0]['CompanyID'],data=json.dumps({'Content-Type': 'application/json'}).encode())
             stations+=json.loads(urllib.request.urlopen(req).read())
     #return json.dumps(stationcorrection)
-    results=map(lambda val:f"""<a href="/stop?sid={val["Sid"]}" class="clearfix">
+    results=map(lambda val:f"""<a href="/stop?stationsid={val["Sid"]}" class="clearfix">
 							<div class="cardHead">
 								<div><p class="cardName">{val["Name"]}<span>{val["Yomigana"]}</span></p></div>
 								<div class="cityInfo"></div>
