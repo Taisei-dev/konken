@@ -210,18 +210,21 @@
                 noribachange.appendChild(noriba);
             }
         })
+        if(noribas.length==0){
+            document.querySelector('p.change').style.display='none';
+        }
         var data=document.querySelector("#kurukendata");
         //停留所名とのりば番号とタイトル
         var stationname=document.querySelector('p.resultSekkinStationName').innerText;
         if(stationname.search('：')!=-1){
             document.querySelector('span.bstop_name').innerText=stationname.substring(0,stationname.search('：')-1);
-            document.title=document.querySelector('span.bstop_name').innerText+' のりば'+document.querySelector('#area p.mark').innerText;
             document.querySelector('#area p.mark').innerText=stationname.slice(stationname.search('：')+1);
+            document.title=document.querySelector('span.bstop_name').innerText+' のりば'+document.querySelector('#area p.mark').innerText;
         }
         else{
             document.querySelector('span.bstop_name').innerText=stationname;
-            document.title=document.querySelector('span.bstop_name').innerText;
             document.querySelector('#area p.mark').style.display='none';
+            document.title=document.querySelector('span.bstop_name').innerText;
         }
         //詳細
         var parent=document.querySelector('div.stopBusBox01 ul');
