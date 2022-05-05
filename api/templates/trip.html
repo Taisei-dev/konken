@@ -164,62 +164,67 @@
         }
         //詳細
         var jsondata={{ jsondata | safe }};
-        var parent=document.querySelector('div.routeBox01 ul');
-        jsondata['Daiya']['PassedSchedules'].forEach((val,index,array)=>{
-            var li=document.createElement('li');
-            li.innerHTML='<div class="inBox">'+
-                        '   <div class="bstop_name">'+
-                        '       <a href="/stop?stationsid='+val['Station']['Sid']+'">'+
-                        '           <dl class="row">'+
-                        '               <dt class="col_time">'+
-                        '                   <p class="arv_time">'+val['ScheduledTime']['Value']+'</p>'+
-                        '               </dt>'+
-                        '               <dd class="col_stop">'+
-                        '                   <div class="col_noriba">'+
-                        '                       <!--<span class="stop_number">'+'1'+'</span>-->'+
-                        '                   </div>'+
-                        '                  <div class="col_Name">'+
-                        '                       <span class="ruby_name">'+val['Station']['Yomigana']+'</span>'+
-                        '                       <span class="StopName">'+val['Station']['Name']+'</span>'+
-                        '                   </div>'+
-                        '                </dd>'+
-                        '            </dl>'+
-                        '       </a>'+
-                        '   </div>'+
-                        '</div>';
-            var halfwaypoint=document.createElement('li');
-            halfwaypoint.classList.add('pass');
-            halfwaypoint.innerHTML='<p class="halfwayPoint"></p>';
-            if(val['Station']['Sid']===stationsid){
-                li.classList.add('stay');
-                var stay=document.createElement('p');
-                stay.id='stay';
-                li.appendChild(stay);
-                document.querySelector('p.time').innerText=val['ScheduledTime']['Value'];
-                document.querySelector('#back a').innerText=val['Station']['Name'];
-                document.querySelector('#back a').href='/stop?stationsid='+stationsid;
-                document.title='運行状況　'+val['Station']['Name'];
+        if(Object.keys(jsondata).length!=0){
+            var parent=document.querySelector('div.routeBox01 ul');
+            jsondata['Daiya']['PassedSchedules'].forEach((val,index,array)=>{
+                var li=document.createElement('li');
+                li.innerHTML='<div class="inBox">'+
+                            '   <div class="bstop_name">'+
+                            '       <a href="/stop?stationsid='+val['Station']['Sid']+'">'+
+                            '           <dl class="row">'+
+                            '               <dt class="col_time">'+
+                            '                   <p class="arv_time">'+val['ScheduledTime']['Value']+'</p>'+
+                            '               </dt>'+
+                            '               <dd class="col_stop">'+
+                            '                   <div class="col_noriba">'+
+                            '                       <!--<span class="stop_number">'+'1'+'</span>-->'+
+                            '                   </div>'+
+                            '                  <div class="col_Name">'+
+                            '                       <span class="ruby_name">'+val['Station']['Yomigana']+'</span>'+
+                            '                       <span class="StopName">'+val['Station']['Name']+'</span>'+
+                            '                   </div>'+
+                            '                </dd>'+
+                            '            </dl>'+
+                            '       </a>'+
+                            '   </div>'+
+                            '</div>';
+                var halfwaypoint=document.createElement('li');
+                halfwaypoint.classList.add('pass');
+                halfwaypoint.innerHTML='<p class="halfwayPoint"></p>';
+                if(val['Station']['Sid']===stationsid){
+                    li.classList.add('stay');
+                    var stay=document.createElement('p');
+                    stay.id='stay';
+                    li.appendChild(stay);
+                    document.querySelector('p.time').innerText=val['ScheduledTime']['Value'];
+                    document.querySelector('#back a').innerText=val['Station']['Name'];
+                    document.querySelector('#back a').href='/stop?stationsid='+stationsid;
+                    document.title='運行状況　'+val['Station']['Name'];
+                }
+                if(index==jsondata['Passages'].length-1){
+                    var now=document.createElement('p');
+                    now.classList.add('bus_now');
+                    now.innerHTML='<img src="/img/common/icon_busnow.png" width=115>';
+                    (jsondata['Passages'][index]['StartTime'][6]=='-'?li:halfwaypoint).appendChild(now);
+                }
+                parent.appendChild(li);
+                if(index!=array.length-1){
+                    parent.appendChild(halfwaypoint);
+                }
+            });
+            function showBusInfo(){
+                var numberplate=jsondata["Bus"]["NumberPlate"],
+                companyname=jsondata["Bus"]["Company"]["Name"],
+                eigyosho=jsondata["Bus"]["Office"]["EigyoshoName"],
+                rosenname=jsondata["Daiya"]["Course"]["Name"],
+                driver=jsondata["Driver"]?jsondata["Driver"]["Name"]:"";
+                alert('会社: '+(companyname||" - ")+'\n営業所: '+(eigyosho||" -")+'\nナンバー: '+(numberplate||" - ")+'\n路線名: '+(rosenname||" - ")+'\n運転手: '+(driver||" - "));
             }
-            if(index==jsondata['Passages'].length-1){
-                var now=document.createElement('p');
-                now.classList.add('bus_now');
-                now.innerHTML='<img src="/img/common/icon_busnow.png" width=115>';
-                (jsondata['Passages'][index]['StartTime'][6]=='-'?li:halfwaypoint).appendChild(now);
-            }
-            parent.appendChild(li);
-            if(index!=array.length-1){
-                parent.appendChild(halfwaypoint);
-            }
-        });
-        function showBusInfo(){
-            var numberplate=jsondata["Bus"]["NumberPlate"],
-            companyname=jsondata["Bus"]["Company"]["Name"],
-            eigyosho=jsondata["Bus"]["Office"]["EigyoshoName"],
-            rosenname=jsondata["Daiya"]["Course"]["Name"],
-            driver=jsondata["Driver"]?jsondata["Driver"]["Name"]:"";
-            alert('会社: '+(companyname||" - ")+'\n営業所: '+(eigyosho||" -")+'\nナンバー: '+(numberplate||" - ")+'\n路線名: '+(rosenname||" - ")+'\n運転手: '+(driver||" - "));
+            window.location.hash='stay';
         }
-        window.location.hash='stay';
+        else{
+            document.querySelector('span.terminal').innerText='データがありません';
+        }
     </script>
 </body>
 </html>
