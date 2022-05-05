@@ -1,11 +1,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot%3Finw74j');
-  src:  url('fonts/icomoon.eot%3Finw74j') format('embedded-opentype'),
-    url('fonts/icomoon.ttf%3Finw74j') format('truetype'),
-    url('https://busit.jp/css/fonts/icomoon.woff?inw74j') format('woff'),
-    url('fonts/icomoon.svg%3Finw74j') format('svg');
+  src:  url('fonts/icomoon.eot');
+  src:  url('fonts/icomoon.eot') format('embedded-opentype'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('https://busit.jp/css/fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }

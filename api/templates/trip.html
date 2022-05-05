@@ -41,7 +41,7 @@
     <div id="container" class="rote">
         <header class="slide">
             <div id="header">
-            <p id="back"><a href="javascript:history.back()">八幡神社前</a></p>
+            <p id="back"><a href="javascript:history.back()"></a></p>
             <p id="language"><a href="#modal-p01">Lang</a></p>
     <p class="menu"><img src="../img/common/icon_navi.png" width="45" height="45" id="navToggle" class="burger slide" alt=""></p>
 </div>
@@ -67,7 +67,7 @@
                 <ul>
                     <li class="stay"><a href="21_151%3Fseq=7.html#stay">運行状況</a></li>
                                             <li class=""><a href="/times/21_151?seq=7#stay">時刻表</a></li>
-                                        <li class=""><a href="/agency/21_151?seq=7#stay">運行会社</a></li>
+                                        <li class=""><a href="javascript:showBusInfo()">運行会社</a></li>
                 </ul>
             </div>
             <!--/バス詳細ナビ-->
@@ -75,19 +75,17 @@
             <!--到着バス・所要時間-->
             <div class="stopBusBox01 type01">
                 <ul>
-                    <li class="buscard soon" itemscope itemtype="http://schema.org/BusTrip">
+                    <li class="buscard" itemscope itemtype="http://schema.org/BusTrip">
                         <div class="head">
                             <p class="time" itemprop="departureTime"></p>
-                            <p class="status">Arrive soon</p>
+                            <p class="status"></p>
                         </div>
                         <div class="iconGroup">
                             <p>
-                                <span class="nonStep">Non Step</span><span class="nonStep">ICチャージ</span>
                             </p>
                         </div>
                         <div class="btm">
                             <p class="company">
-                                <img src="../img/bus/icon_21.png" width="44" alt="">
                             </p>
                             <div class="bordBox">
                                 <div class="inBox">
@@ -95,8 +93,8 @@
                                     <!--/系統名短表記-->
                                     <!--経由地と行先-->
                                     <p class="destination">
-                                        <span class="route">世上口・第一術科学校前・山田・江南橋</span>
-                                        <span class="terminal"  itemprop="name">中継ターミナルゆめタウン前</span>
+                                        <span class="route"></span>
+                                        <span class="terminal"  itemprop="name">通過しました</span>
                                     </p>
                                     <!--/経由地と行先-->
                                 </div>
@@ -125,21 +123,50 @@
         </div><!--/content-->
 
     </div><!--/wrapper-->
-    <script>
-        var jsondata={{ jsondata | safe }};
-    </script>
+    <div id="kurukendata" style="display:none">
+    {{ kurukendata | safe }}
+    </div>
     <script>
         var search=new URLSearchParams(window.location.search);
-        var stationsid=search.get('stationsid')
+        var daiyasid=search.get('daiyasid');
+        var stationsid=search.get('stationsid');
+        //ヘッダー
+        var imgbycomid={"bus-73086101":3,"bus-73008250":4,"bus-73385130":5,"bus-73385140":6,"bus-73308150":7,"bus-72700110":8,"bus-73900430":9,"bus-73208220":10,"bus-73805130":13,"bus-73885010":29,"bus-73785010":39,}
+        var tripsearchresult=document.querySelector('#approach_list_for_daiya li.approachDtlCard div[data-sid="'+daiyasid+'"]');
+        if(tripsearchresult){
+            var trip=tripsearchresult.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+            var li=document.querySelector('li.buscard');
+            li.innerHTML='<div class="head">'+
+                        '   <p class="time" itemprop="departureTime">'+trip.querySelector('td.Time').innerText+'</p>'+
+                        '   <p class="status">'+(trip.querySelector('div.changeCourseInner span.arrivedAboutMinPre')?('約'+trip.querySelector('div.changeCourseInner').innerText+'分で到着'):trip.querySelector('div.changeCourseInner').innerText)+'</p>'+
+                        '</div>'+
+                        '<div class="iconGroup">'+
+                        '   <p>'+'<!--<span class="incompatible">バスロケ未受信</span>-->'+(trip.querySelector('td.BusType div.NonStep')?'<span class="nonStep">ノンステップ</span>':'')+(trip.querySelector('td.BusType div.OneStep')?'<span class="oneStep">ワンステップ</span>':'')+(trip.querySelector('td.BusSlope div.none')?'':'<span class="nonStep">スロープ</span>')+'<!--<span class="extraordinary">臨時便</span>-->'+'</p>'+
+                        '</div>'+
+                        '<div class="btm">'+
+                        '   <p class="company">'+'<img src="../img/bus/icon_'+imgbycomid[trip.classList[0]]+'.png" width="44"/>'+'</p>'+
+                        '   <div class="bordBox">'+
+                        '       <div class="inBox">'+
+                        '           <p class="num">'+trip.querySelector('td.KeitouNo').innerText+'</p>'+
+                        '           <p class="destination">'+
+                        '               <a href="javascript:void(0)">'+
+                        '                   <span class="route">'+(trip.querySelector('div.IkisakiKeiyuName')?trip.querySelector('div.IkisakiKeiyuName').innerText:'')+'</span>'+
+                        '                   <span class="terminal">'+trip.querySelector('td.CourseGroupName a').innerText+'</span>'+
+                        '               </a>'+
+                        '           </p>'+
+                        '       </div>'+
+                        '   </div>'+
+                        '</div>';
+            li.querySelector('p.destination a').href='javascript:'+trip.querySelector('td.CourseGroupName a').onclick.toString().slice(26.-2);
+            if(trip.querySelector('div.changeCourseInner span.arrivingSoon')||trip.querySelector('div.changeCourseInner span.arrivingDoorOpen')||trip.querySelector('div.changeCourseInner span.arrivingTargetStation')){
+                li.classList.add('soon');
+            }
+        }
+        //詳細
+        var jsondata={{ jsondata | safe }};
         var parent=document.querySelector('div.routeBox01 ul');
         jsondata['Daiya']['PassedSchedules'].forEach((val,index,array)=>{
             var li=document.createElement('li');
-            if(val['Station']['Sid']===stationsid){
-                li.classList.add('stay');
-                document.querySelector('p.time').innerText=val['ScheduledTime']['Value'];
-                document.querySelector('#back a').innerText=val['Station']['Name'];
-                document.title='運行状況　'+val['Station']['Name'];
-            }
             li.innerHTML='<div class="inBox">'+
                         '   <div class="bstop_name">'+
                         '       <a href="/stop?stationsid='+val['Station']['Sid']+'">'+
@@ -160,20 +187,39 @@
                         '       </a>'+
                         '   </div>'+
                         '</div>';
+            var halfwaypoint=document.createElement('li');
+            halfwaypoint.classList.add('pass');
+            halfwaypoint.innerHTML='<p class="halfwayPoint"></p>';
+            if(val['Station']['Sid']===stationsid){
+                li.classList.add('stay');
+                var stay=document.createElement('p');
+                stay.id='stay';
+                li.appendChild(stay);
+                document.querySelector('p.time').innerText=val['ScheduledTime']['Value'];
+                document.querySelector('#back a').innerText=val['Station']['Name'];
+                document.querySelector('#back a').href='/stop?stationsid='+stationsid;
+                document.title='運行状況　'+val['Station']['Name'];
+            }
+            if(index==jsondata['Passages'].length-1){
+                var now=document.createElement('p');
+                now.classList.add('bus_now');
+                now.innerHTML='<img src="/img/common/icon_busnow.png" width=115>';
+                (jsondata['Passages'][index]['StartTime'][6]=='-'?li:halfwaypoint).appendChild(now);
+            }
             parent.appendChild(li);
             if(index!=array.length-1){
-                var halfwaypoint=document.createElement('li');
-                halfwaypoint.classList.add('pass');
-                if(index==jsondata['Passages'].length-1){
-                    halfwaypoint.innerHTML='<p class="halfwayPoint"></p>'+
-                                            '<p class="bus_now"><img src="/img/common/icon_busnow.png" width=115></p>';
-                }
-                else{
-                    halfwaypoint.innerHTML='<p class="halfwayPoint"></p>';
-                }
                 parent.appendChild(halfwaypoint);
             }
         });
+        function showBusInfo(){
+            var numberplate=jsondata["Bus"]["NumberPlate"],
+            companyname=jsondata["Bus"]["Company"]["Name"],
+            eigyosho=jsondata["Bus"]["Office"]["EigyoshoName"],
+            rosenname=jsondata["Daiya"]["Course"]["Name"],
+            driver=jsondata["Driver"]?jsondata["Driver"]["Name"]:"";
+            alert('会社: '+(companyname||" - ")+'\n営業所: '+(eigyosho||" -")+'\nナンバー: '+(numberplate||" - ")+'\n路線名: '+(rosenname||" - ")+'\n運転手: '+(driver||" - "));
+        }
+        window.location.hash='stay';
     </script>
 </body>
 </html>

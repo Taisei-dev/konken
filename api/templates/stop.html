@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="format-detection" content="telephone=no">
-<title></title>
+<title>接近情報</title>
 <link rel="apple-touch-icon-precomposed" href="/img/appicon.png">
 <link rel="stylesheet" href="../css/autocomplete.css" media="all">
 <link rel="stylesheet" href="../css/import.css" media="all">
@@ -22,12 +22,6 @@
 <!--[if lt IE 9]>
 <script src="/js/html5shiv.js"></script>
 <![endif]-->
-
-<script async=“async” src="../client/towncreation/flux_busit_AS_PB_AT.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-var pbjs = pbjs || {};
-pbjs.que = pbjs.que || [];
-</script>
 
 </head>
 <body>
@@ -62,13 +56,6 @@ pbjs.que = pbjs.que || [];
         <div class="modal-inner">
             <p>のりば切り替え</p>
             <div class="modal-scroll">
-                <div>
-                    <a href="/stop/0001050">
-                            広島バスセンター<br />
-                            Hiroshima Bus Center<br />
-                            for drop only, Hiroshima Sta.
-                    </a>
-            </div>
             </div>
         </div>
         <a href="#!" class="modal-close"></a>
@@ -204,21 +191,39 @@ pbjs.que = pbjs.que || [];
         });
     </script>
     <div id="kurukendata" style="display:none">
-    {{ response | safe }}
+    {{ kurukendata | safe }}
     </div>
     <script>
+        var search=new URLSearchParams(window.location.search);
+        var stationsid=search.get('stationsid');
+        //のりば切り替えダイアログを設定
+        var noribas={{ noribas | safe }};
+        var noribachange=document.querySelector('section#modal-p02 div.modal-scroll');
+        noribas.forEach(noribadata=>{
+            if(noribadata['Sid']!=stationsid){
+                var noriba=document.createElement('div');
+                noriba.innerHTML='<a href="/stop?stationsid='+noribadata['Sid']+'">'+
+                                noribadata['Name']+' のりば '+noribadata['RenbanName'].slice(0,noribadata['RenbanName'].search('_'))+'<br>'+
+                                noribadata['Yomigana']+'<br>'+
+                                noribadata['RenbanName'].slice(noribadata['RenbanName'].search('_')+1)+
+                                '</a>';
+                noribachange.appendChild(noriba);
+            }
+        })
         var data=document.querySelector("#kurukendata");
+        //停留所名とのりば番号とタイトル
         var stationname=document.querySelector('p.resultSekkinStationName').innerText;
         if(stationname.search('：')!=-1){
             document.querySelector('span.bstop_name').innerText=stationname.substring(0,stationname.search('：')-1);
             document.title=document.querySelector('span.bstop_name').innerText+' のりば'+document.querySelector('#area p.mark').innerText;
-            document.querySelector('#area p.mark').innerText=stationname.substr(stationname.search('：')+1,stationname.length-1);
+            document.querySelector('#area p.mark').innerText=stationname.slice(stationname.search('：')+1);
         }
         else{
             document.querySelector('span.bstop_name').innerText=stationname;
             document.title=document.querySelector('span.bstop_name').innerText;
             document.querySelector('#area p.mark').style.display='none';
         }
+        //詳細
         var parent=document.querySelector('div.stopBusBox01 ul');
         var imgbycomid={"bus-73086101":3,"bus-73008250":4,"bus-73385130":5,"bus-73385140":6,"bus-73308150":7,"bus-72700110":8,"bus-73900430":9,"bus-73208220":10,"bus-73805130":13,"bus-73885010":29,"bus-73785010":39,}
         var trips=document.querySelectorAll('#approach_list_for_daiya li.approachDtlCard');
