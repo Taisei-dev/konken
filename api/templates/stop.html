@@ -203,14 +203,14 @@
             if(noribadata['Sid']!=stationsid){
                 var noriba=document.createElement('div');
                 noriba.innerHTML='<a href="/stop?stationsid='+noribadata['Sid']+'">'+
-                                noribadata['Name']+' のりば '+noribadata['RenbanName'].slice(0,noribadata['RenbanName'].search('_'))+'<br>'+
+                                noribadata['Name']+(noribadata['RenbanName'].search('_')?'':' のりば '+noribadata['RenbanName'].slice(0,noribadata['RenbanName'].search('_')))+'<br>'+
                                 noribadata['Yomigana']+'<br>'+
                                 noribadata['RenbanName'].slice(noribadata['RenbanName'].search('_')+1)+
                                 '</a>';
                 noribachange.appendChild(noriba);
             }
         })
-        if(noribas.length==0){
+        if(noribas.length==1){
             document.querySelector('p.change').style.display='none';
         }
         var data=document.querySelector("#kurukendata");
