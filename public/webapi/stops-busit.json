@@ -1,0 +1,65 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "132.455824",
+                    "34.396353"
+                ]
+            },
+            "properties": {
+                "id": "0001001",
+                "name": "\u5e83\u5cf6\u30d0\u30b9\u30bb\u30f3\u30bf\u30fc",
+                "lat": "34.396353",
+                "lon": "132.455824",
+                "num": "1",
+                "ruby": "\u3072\u308d\u3057\u307e\u3070\u3059\u305b\u3093\u305f\u30fc",
+                "alias": null,
+                "direction_info": "1 \u9ad8\u901f\u30d0\u30b9"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "132.456207",
+                    "34.39637"
+                ]
+            },
+            "properties": {
+                "id": "0001050",
+                "name": "\u5e83\u5cf6\u30d0\u30b9\u30bb\u30f3\u30bf\u30fc",
+                "lat": "34.39637",
+                "lon": "132.456207",
+                "num": "",
+                "ruby": "\u3072\u308d\u3057\u307e\u3070\u3059\u305b\u3093\u305f\u30fc",
+                "alias": null,
+                "direction_info": "\u964d\u8eca\u30db\u30fc\u30e0\u5074\u3001\u5e83\u5cf6\u99c5\u3086\u304d"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    "132.460773",
+                    "34.407819"
+                ]
+            },
+            "properties": {
+                "id": "5179201",
+                "name": "\u65b0\u767d\u5cf6\u99c5",
+                "lat": "34.407819",
+                "lon": "132.460773",
+                "num": "",
+                "ruby": "\u3057\u3093\u306f\u304f\u3057\u307e\u3048\u304d",
+                "alias": null,
+                "direction_info": "\u5e83\u5cf6\u30d0\u30b9\u30bb\u30f3\u30bf\u30fc\u65b9\u9762"
+            }
+        }
+    ]
+}

@@ -1,0 +1,342 @@
+[
+    {
+        "Sid": "ff1322c4-1ace-4578-9e63-bcd48bf154fc",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3930999999576,
+            "Longitude": 132.459016666412,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "3",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "6f44e969-084b-4927-a4dd-a334d3669f64",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3931333329942,
+            "Longitude": 132.45826666673,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "11",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "56820b5e-f4b9-4098-8de9-4d1ec6bcf68e",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3929666667514,
+            "Longitude": 132.458833333121,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "10",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "82da3a80-0ceb-4d63-aae8-425f786b2240",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3932000001272,
+            "Longitude": 132.458783333037,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "3",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "36468d12-cf5d-400e-812d-af2d671c342e",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3932000001272,
+            "Longitude": 132.458866666688,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "4",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "60b3d631-e1ca-4052-8de2-66a2f61cd70f",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3929499997033,
+            "Longitude": 132.458949999279,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "1",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "58b768f0-fd28-4d52-8ea0-411aa1d82c79",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3929166666667,
+            "Longitude": 132.458766666518,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "16",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "f0ce0a2a-9f8a-46f1-a462-9174bb30af45",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3930166668362,
+            "Longitude": 132.458783333037,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "7",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "b8c24be5-4c73-44a0-96b8-4da289e1f1c6",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3929833327399,
+            "Longitude": 132.458816666603,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "4",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "714e071e-7618-4a5a-a990-4ceffcfc7b8c",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3929833327399,
+            "Longitude": 132.458816666603,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "6",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "8863cd7e-67a3-490f-922f-4a9d83509698",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3929166666667,
+            "Longitude": 132.458983333376,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "1",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "ef18b009-5ade-4f13-9099-5a3dd9f3c863",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3929833327399,
+            "Longitude": 132.458816666603,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "8",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "46c5c52b-b52d-4139-9a79-547d1604d24b",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3930833329095,
+            "Longitude": 132.458399999936,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "2",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "6212ee44-9ef5-4984-b521-33dabfbb091a",
+        "Name": "紙屋町",
+        "ShortName": "紙屋町",
+        "Yomigana": "かみやちょう",
+        "Position": {
+            "Latitude": 34.392316666709,
+            "Longitude": 132.458499999576,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "98",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "5892a262-9a0c-45b9-aecd-7cbef6d8b971",
+        "Name": "紙屋町",
+        "ShortName": "紙屋町",
+        "Yomigana": "かみやちょう",
+        "Position": {
+            "Latitude": 34.3925666660733,
+            "Longitude": 132.45846666654,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "6",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "648f67f4-1549-4684-83f0-4de25c51abcc",
+        "Name": "紙屋町",
+        "ShortName": "紙屋町",
+        "Yomigana": "かみやちょう",
+        "Position": {
+            "Latitude": 34.3923333326975,
+            "Longitude": 132.45836666637,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "0",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    },
+    {
+        "Sid": "97d1c498-cc77-4c04-b4d6-0ad826d7b32d",
+        "Name": "広島バスセンター",
+        "ShortName": "広島バスセンター",
+        "Yomigana": "ひろしまばすせんたー",
+        "Position": {
+            "Latitude": 34.3931333329942,
+            "Longitude": 132.459099999534,
+            "AdicNumber": 1,
+            "Datum": 2
+        },
+        "TeiryujyoKbnCd": 1,
+        "WebSpecificDisplay": 3,
+        "RenbanCd": "0",
+        "RenbanName": "",
+        "OrderNo": null,
+        "Keiyujun": 0,
+        "WcfConnectCd": null,
+        "StationLang": null
+    }
+]

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>地図からバス停を探す | バスイット</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- Style Sheets --> 
+        <link rel="stylesheet" type="text/css" media="all" href="/css/import.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="/css/fonts.css" />
+        <link rel="apple-touch-icon-precomposed" href="/img/appicon.png">
+        <link href="/img/favicon.ico" rel="shortcut icon">
+                <style>
+                   .marker {
+                       background-image: url('../img/busitmap-stop.png');
+                       background-size: cover;
+                       width: 50px;
+                       height: 50px;
+                       border-radius: 50%;
+                       cursor: pointer;
+               }
+                   </style>
+        <!-- Scripts -->        
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+        <script async src="/js/trunk2.js"></script>
+
+        <link rel='stylesheet' href='/css/jquery.toast.css' />  
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css' rel='stylesheet' />
+        <script src='/js/jquery.toast.js'></script>  
+        <!-- map -->
+        <script src="/js/maps/stop-search2.js"></script>
+    </head>
+    <body class="bgnone" onload="initMap()">
+        <div id="container"> 
+            <div class="mask slide"></div>
+            <header itemscope itemtype="http://schema.org/Brand" class="slide">
+                <div id="header">
+                    <h1 id="ttl"><a href="/" itemprop="url"><img src="/img/common/logo.png" width="90" alt="BUSitバスイット" itemprop="logo"></a></h1>
+                    <p class="menu"><img src="/img/common/icon_navi.png" width="45" height="45" id="navToggle" class="burger slide" alt=""></p>
+                </div>
+            </header>
+            <nav class="slide">
+                <ul>
+                    <li class="navttl"><img src="/img/common/logo-top.png" alt="BUSit-バスイット"></li>
+                    <li><a href="/favorite/"><i class="icon icon-star"></i>お気に入り</a></li>
+                    <li><a href="/history/"><i class="icon icon-time"></i>履歴</a></li>
+                <li><a href="/ptimetable/index.html"><i class="icon icon-bus"></i>各バス会社リンク先</a></li>
+                    <li><a href="/howto/setting.html"><i class="icon icon-beginner"></i>ご利用方法</a></li>
+                    <!--<li><a href="/advertising/index.html"><i class="icon icon-image"></i>広告募集</a></li>-->
+                    <li><a href="/contact/towncreation.html"><i class="icon icon-bill"></i>運営会社</a></li>
+                    <li><a href="/disclaimer.html"><i class="icon icon-guide"></i>ご利用規約</a></li>
+                    <!-- <li><a href="https://www.towncreation.com/product/busit-ad/stop_ad/" target="_blank"><i class="icon icon-image"></i>広告募集</a></li> -->
+                </ul>
+            </nav>
+            <div class="content slide">
+                <div id="map_canvas" style="width:375px;height:622px;"></div>
+            </div>
+        </div>
+        <script src="/js/maps/mapsize.js"></script>
+    </body>
+</html>
