@@ -206,6 +206,13 @@
                     now.classList.add('bus_now');
                     now.innerHTML='<img src="/img/common/icon_busnow.png" width=115>';
                     (jsondata['Passages'][index]['StartTime'][6]=='-'?li:halfwaypoint).appendChild(now);
+                    
+                    if(!stationsid){
+                        //stationsidがなかった場合近い停留所に移動
+                        li.classList.add('stay');
+                        var stay=document.createElement('p');
+                        stay.id='stay';
+                    }
                 }
                 parent.appendChild(li);
                 if(index!=array.length-1){

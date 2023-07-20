@@ -1,216 +1,241 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ja">
-<head> 
-<title>くるけｎ</title> 
-<meta charset="UTF-8">
-<meta name="keywords" content="バスイット,BUSit,バス待ち時間">
-<meta name="description" content="バスイットはバスの接近情報案内サービスです。">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="HandheldFriendly" content="True">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Cache-Control" content="no-cache">
-<meta name="google-site-verification" content="X-GWjZfEYlYyEYCblg0Ela2af-7g73bub4-Ec78Lo0I" />
-<!-- Style Sheets --> 
-<link rel="stylesheet" type="text/css" media="all" href="css/import.css" />
-<link rel="stylesheet" type="text/css" media="all" href="css/busit-each.css" />
-<link rel="stylesheet" type="text/css" media="all" href="css/cityscape.css" />
-<link rel="stylesheet" type="text/css" media="all" href="css/fonts.css" />
 
-<link type="text/css" rel="stylesheet" href="ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
-<!-- icon -->
-<link rel="apple-touch-icon-precomposed" href="https://busit.jp/img/appicon.png">
-<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://busit.jp/img/appicon-120.png">
-<link rel="apple-touch-icon-precomposed" href="https://busit.jp/img/appicon.png">
-<link href="img/favicon.ico" rel="shortcut icon">
-<!-- Scripts -->
-<script src="jquery-1.10.2.min.js"></script>
-<script src="ui/1.10.3/jquery-ui.min.js"></script>
-<script>
-</script>
-<!--[if lt IE 9]><script src="/js/html5shiv.js"></script><![endif]-->
-<script async src="js/trunk2.js"></script>
-<script async src="js/autocomplete.js"></script>
-<script async src="js/history-location-latlng.js"></script>
-<!--<link rel="stylesheet" href="css/owl.carousel.css">
+<head>
+    <title>くるけｎ</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="バスイット,BUSit,バス待ち時間">
+    <meta name="description" content="バスイットはバスの接近情報案内サービスです。">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="google-site-verification" content="X-GWjZfEYlYyEYCblg0Ela2af-7g73bub4-Ec78Lo0I" />
+    <!-- Style Sheets -->
+    <link rel="stylesheet" type="text/css" media="all" href="css/import.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/busit-each.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/cityscape.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="css/fonts.css" />
+
+    <link type="text/css" rel="stylesheet" href="ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+    <!-- icon -->
+    <link rel="apple-touch-icon-precomposed" href="https://busit.jp/img/appicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://busit.jp/img/appicon-120.png">
+    <link rel="apple-touch-icon-precomposed" href="https://busit.jp/img/appicon.png">
+    <link href="img/favicon.ico" rel="shortcut icon">
+    <!-- Scripts -->
+    <script src="jquery-1.10.2.min.js"></script>
+    <script src="ui/1.10.3/jquery-ui.min.js"></script>
+    <script>
+    </script>
+    <!--[if lt IE 9]><script src="/js/html5shiv.js"></script><![endif]-->
+    <script async src="js/trunk2.js"></script>
+    <script async src="js/autocomplete.js"></script>
+    <script async src="js/history-location-latlng.js"></script>
+    <!--<link rel="stylesheet" href="css/owl.carousel.css">
 <link rel="stylesheet" href="css/owl.theme.css">-->
-<link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
-<link href="css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
-<script src="js/owl.carousel.js"></script>
-<script async src="js/index.js"></script>
-<script>
-$('document').ready(function(){
-// 2点間の距離計算
-function getDistance(lat1, lon1, lat2, lon2) {
-    function radians(deg) {
-        return deg * Math.PI / 180;
-    }
-    return 6378.14 * Math.acos(Math.cos(radians(lat1)) * Math.cos(radians(lat2)) * Math.cos(radians(lon2) - radians(lon1)) + Math.sin(radians(lat1)) * Math.sin(radians(lat2)));
-}
+    <link href="css/owl.carousel.min.css" rel="stylesheet" type="text/css">
+    <link href="css/owl.theme.default.min.css" rel="stylesheet" type="text/css">
+    <script src="js/owl.carousel.js"></script>
+    <script async src="js/index.js"></script>
+    <script>
+        $('document').ready(function () {
+            // 2点間の距離計算
+            function getDistance(lat1, lon1, lat2, lon2) {
+                function radians(deg) {
+                    return deg * Math.PI / 180;
+                }
+                return 6378.14 * Math.acos(Math.cos(radians(lat1)) * Math.cos(radians(lat2)) * Math.cos(radians(lon2) - radians(lon1)) + Math.sin(radians(lat1)) * Math.sin(radians(lat2)));
+            }
 
-// 都市
-var cities = [
-			{landscapeId: "22", name: "アウトレット広島", lat: "34.411403", lon: "132.396766", dist: '0', fileName: "ZVpvBG0q.png"},
-			{landscapeId: "21", name: "江田島", lat: "34.222438", lon: "132.441185", dist: '0', fileName: "smimaw3K.png"},
-			{landscapeId: "20", name: "岩国", lat: "34.171959", lon: "132.225592", dist: '0', fileName: "nD8WjVtL.png"},
-			{landscapeId: "19", name: "松山", lat: "33.835615", lon: "132.762043", dist: '0', fileName: "rkgq2Kem.png"},
-			{landscapeId: "18", name: "廿日市", lat: "34.3484", lon: "132.331565", dist: '0', fileName: "JU4MNsjv.png"},
-			{landscapeId: "17", name: "鞆の浦", lat: "34.382948", lon: "133.38393", dist: '0', fileName: "aLtEJohY.png"},
-			{landscapeId: "16", name: "広島", lat: "34.393081", lon: "132.4473455", dist: '0', fileName: "G04VH7It.png"},
-	];
+            // 都市
+            var cities = [
+                { landscapeId: "22", name: "アウトレット広島", lat: "34.411403", lon: "132.396766", dist: '0', fileName: "ZVpvBG0q.png" },
+                { landscapeId: "21", name: "江田島", lat: "34.222438", lon: "132.441185", dist: '0', fileName: "smimaw3K.png" },
+                { landscapeId: "20", name: "岩国", lat: "34.171959", lon: "132.225592", dist: '0', fileName: "nD8WjVtL.png" },
+                { landscapeId: "19", name: "松山", lat: "33.835615", lon: "132.762043", dist: '0', fileName: "rkgq2Kem.png" },
+                { landscapeId: "18", name: "廿日市", lat: "34.3484", lon: "132.331565", dist: '0', fileName: "JU4MNsjv.png" },
+                { landscapeId: "17", name: "鞆の浦", lat: "34.382948", lon: "133.38393", dist: '0', fileName: "aLtEJohY.png" },
+                { landscapeId: "16", name: "広島", lat: "34.393081", lon: "132.4473455", dist: '0', fileName: "G04VH7It.png" },
+            ];
 
-if (navigator.geolocation) {
-	navigator.geolocation.getCurrentPosition(
-		function (pos) {
-			var lat = pos.coords.latitude;
-			var lon = pos.coords.longitude;
-			if(!isNaN(lat) && !isNaN(lon)) {
-				for (var i = 0; i < cities.length; i++) {
-					cities[i].dist = getDistance(lat, lon, cities[i].lat, cities[i].lon);
-				}
-				var city = null;
-				for (var i = 0; i < cities.length; i++) {
-					if (i === 0) {
-						city = cities[0];
-					} else {
-						if (city.dist > cities[i].dist) {
-							city = cities[i];
-						}
-					}
-				}
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function (pos) {
+                        var lat = pos.coords.latitude;
+                        var lon = pos.coords.longitude;
+                        if (!isNaN(lat) && !isNaN(lon)) {
+                            for (var i = 0; i < cities.length; i++) {
+                                cities[i].dist = getDistance(lat, lon, cities[i].lat, cities[i].lon);
+                            }
+                            var city = null;
+                            for (var i = 0; i < cities.length; i++) {
+                                if (i === 0) {
+                                    city = cities[0];
+                                } else {
+                                    if (city.dist > cities[i].dist) {
+                                        city = cities[i];
+                                    }
+                                }
+                            }
 
-				$('#cityscape').css('background-image', 'url(https://busit2-admin.azurewebsites.net/img/dat/cityscape/' + city.fileName + ')');
+                            $('#cityscape').css('background-image', 'url(https://busit2-admin.azurewebsites.net/img/dat/cityscape/' + city.fileName + ')');
 
-				var latlon = (Math.round(lat * 100) / 100) + "," + (Math.round(lon * 100) / 100);
-				$('#latlon').val(latlon);
-			}
-		},
-		function (error) {
-		}, {
-			enableHighAccuracy: true,
-			timeout: 10000,
-			maximumAge: 0
-		}
-	);
-}
+                            var latlon = (Math.round(lat * 100) / 100) + "," + (Math.round(lon * 100) / 100);
+                            $('#latlon').val(latlon);
+                        }
+                    },
+                    function (error) {
+                    }, {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+                );
+            }
 
 
-});
-</script>
+        });
+    </script>
 
-</head> 
+</head>
+
 <body>
-	<div class="container" id="index">
-		<div class="mask slide"></div>
-		<header class="slide"> 
-			<div id="header">
-				<h1 id="ttl"><a href="index.html"><img src="img/common/logo-top.png" width="120" alt="バスイット"></a></h1>
-				<p class="menu"><img src="img/common/icon_navi.png" width="45" height="45" id="navToggle" class="burger slide" alt=""></p>
-			</div>
-		</header>
-		
-		<nav class="slide">
-			<ul>
-				<li class="navttl"><img src="img/common/logo-top.png" alt="BUSit-バスイット"></li>
-				<li><a href="https://busit.jp/favorite/"><i class="icon icon-star"></i>お気に入り</a></li>
-				<li><a href="https://busit.jp/history/"><i class="icon icon-time"></i>履歴</a></li>
-				<li><a href="https://busit.jp/ptimetable/index.html"><i class="icon icon-bus"></i>各バス会社リンク先</a></li>
-				<li><a href="https://busit.jp/howto/setting.html"><i class="icon icon-beginner"></i>ご利用方法</a></li>
-				<!--
+    <div class="container" id="index">
+        <div class="mask slide"></div>
+        <header class="slide">
+            <div id="header">
+                <h1 id="ttl"><a href="index.html"><img src="img/common/logo-top.png" width="120" alt="バスイット"></a></h1>
+                <p class="menu"><img src="img/common/icon_navi.png" width="45" height="45" id="navToggle"
+                        class="burger slide" alt=""></p>
+            </div>
+        </header>
+
+        <nav class="slide">
+            <ul>
+                <li class="navttl"><img src="img/common/logo-top.png" alt="BUSit-バスイット"></li>
+                <li><a href="https://busit.jp/favorite/"><i class="icon icon-star"></i>お気に入り</a></li>
+                <li><a href="https://busit.jp/history/"><i class="icon icon-time"></i>履歴</a></li>
+                <li><a href="https://busit.jp/ptimetable/index.html"><i class="icon icon-bus"></i>各バス会社リンク先</a></li>
+                <li><a href="https://busit.jp/howto/setting.html"><i class="icon icon-beginner"></i>ご利用方法</a></li>
+                <!--
 				<li><a href="/advertising/index.html"><i class="icon icon-image mr5"></i>広告募集</a></li>-->
-				<li><a href="https://busit.jp/contact/"><i class="icon icon-bill"></i>運営会社</a></li>
-				<li><a href="https://busit.jp/disclaimer.html"><i class="icon icon-guide"></i>ご利用規約</a></li>
-				<!-- <li><a href="https://www.towncreation.com/product/busit-ad/stop_ad/" target="_blank"><i class="icon icon-image"></i>広告募集</a></li> -->
-			</ul>
-		</nav> 
+                <li><a href="https://busit.jp/contact/"><i class="icon icon-bill"></i>運営会社</a></li>
+                <li><a href="https://busit.jp/disclaimer.html"><i class="icon icon-guide"></i>ご利用規約</a></li>
+                <!-- <li><a href="https://www.towncreation.com/product/busit-ad/stop_ad/" target="_blank"><i class="icon icon-image"></i>広告募集</a></li> -->
+            </ul>
+        </nav>
 
-		<div class="content slide">
-			<div class="body-section">
-				
-				<!-- メインイメージ -->
-				<div id="main-screen">
-					<div class="main-ttl">
-						<img alt="「BUSit バスイット」バスの待ち時間がわかる" src="img/top-title.png">
-					</div>
+        <div class="content slide">
+            <div class="body-section">
 
-					<!-- バス停検索 -->
-					<div class="searchBox01">
-						<form accept-charset="utf-8" action="/search/on" id="search" method="get" name="search">
-							<dl>
-								<dt><input id="q" name="q" placeholder="バス停名で検索（ひらがな・漢字可）"></dt>
-								<dd><button type="submit"><i class="icon icon-search mr5"></i>検索</button></dd>
-							</dl>
-							<input type="hidden" id="latlon" name="latlon" value="33.836156,132.762237" />
-						</form>
-					</div><!--/.searchBox01-->
+                <!-- メインイメージ -->
+                <div id="main-screen">
+                    <div class="main-ttl">
+                        <img alt="「BUSit バスイット」バスの待ち時間がわかる" src="img/top-title.png">
+                    </div>
 
-					<div id="cityscape" class="cityscape">
-						<img alt="" src="img/top-bus.png" class="bus-img">
-						<img alt="" src="img/top-screen.png">
-					</div>
-				</div><!--/#main-screen-->
-				
-				<div class="main-cont">
-					<!-- 現在地から探す-->
-					<div id="local-search">
-						<button class="mbwide100" onclick="location.href = '/maps/search.html'">
-						<i class="icon icon-map mr5"></i>現在地から探す</button>
-					</div>
-				
-					<!-- BUSitからのお知らせ -->
-					<div class="sectionBox news busit">
-													<h2>BUSitからのお知らせ</h2>
-														
-							<ul>
-																	<li><span>2019.05.24</span>
-										<p><p>防長交通　5/24 サービス開始（<a href="https://busit.jp/stop/10002411">新山口駅④</a>）</p>
-</p>
-									</li>
-															</ul>
-						
-					</div>
-				</div>
+                    <!-- バス停検索 -->
+                    <div class="searchBox01">
+                        <form accept-charset="utf-8" action="/search/on" id="search" method="get" name="search">
+                            <dl>
+                                <dt><input id="q" name="q" placeholder="バス停名で検索（ひらがな・漢字可）"></dt>
+                                <dd><button type="submit"><i class="icon icon-search mr5"></i>検索</button></dd>
+                            </dl>
+                            <input type="hidden" id="latlon" name="latlon" value="33.836156,132.762237" />
+                        </form>
+                    </div><!--/.searchBox01-->
 
-				<!-- バス会社リンク -->
-				<div class="sectionBox" id="bus-company">
-				<!--<h2>対応路線バス<span>（公式サイト）</span></h2>-->
-				
-					<div id="bus" class="owl-carousel owl-theme">
-																																																						<div class="item">
-									<a href="https://www.bochobus.co.jp/" target="_blank"><img alt="防長交通" src="img/bus/icon_28.png"></a>
-								</div>
-																												<div class="item">
-									<a href="https://www.city.iwakuni.lg.jp" target="_blank"><img alt="岩国市" src="img/bus/icon_32.png"></a>
-								</div>
-																												<div class="item">
-									<a href="http://www.city.etajima.hiroshima.jp/" target="_blank"><img alt="三高タクシー" src="img/bus/icon_16.png"></a>
-								</div>
-																												<div class="item">
-									<a href="http://www.iwakuni-bus.com/" target="_blank"><img alt="いわくにバス" src="img/bus/icon_18.png"></a>
-								</div>
-																												<div class="item">
-									<a href="https://etajimabus.jp" target="_blank"><img alt="江田島バス" src="img/bus/icon_21.png"></a>
-								</div>
-																												<div class="item">
-									<a href="http://www.city.etajima.hiroshima.jp/" target="_blank"><img alt="江田島タクシー" src="img/bus/icon_24.png"></a>
-								</div>
-																												<div class="item">
-									<a href="http://www.city.etajima.hiroshima.jp/" target="_blank"><img alt="能美タクシー" src="img/bus/icon_26.png"></a>
-								</div>
-																															</div>
-				</div>
-			</div>
-		</div>
-		
-		<div class="footer-section slide">
-			<footer>
-				<p>特許登録済・商標登録済</p>
-				<small>&copy; 2015 TOWN CREATION CO.,LTD All Rights Reserved.</small>
-			</footer>
-		</div>
-		
-	</div>
+                    <div id="cityscape" class="cityscape">
+                        <img alt="" src="img/top-bus.png" class="bus-img">
+                        <img alt="" src="img/top-screen.png">
+                    </div>
+                </div><!--/#main-screen-->
+
+                <div class="main-cont">
+                    <!-- 現在地から探す-->
+                    <div id="local-search">
+                        <button class="mbwide100" onclick="location.href = '/maps/search.html'">
+                            <i class="icon icon-map mr5"></i>現在地から探す</button>
+                    </div>
+
+                    <!-- BUSitからのお知らせ -->
+                    <div class="sectionBox news busit">
+                        <h2>お知らせ</h2>
+                        <ul>
+                            <li><span>2023.7.20</span>
+                                <p>
+                                <p>位置情報サイトをリリースしました！ (<a href="https://hiroshima-bus-monitor.vercel.app/">https://hiroshima-bus-monitor.vercel.app/</a>)</p>
+                                </p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><span>2023.7.15</span>
+                                <p>
+                                <p>地図から検索の追加</p>
+                                </p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li><span>2022.05.24</span>
+                                <p>
+                                <p>サービス開始!</p>
+                                </p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- バス会社リンク -->
+                <div class="sectionBox" id="bus-company">
+                    <!--<h2>対応路線バス<span>（公式サイト）</span></h2>-->
+
+                    <div id="bus" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <a href="https://www.bochobus.co.jp/" target="_blank"><img alt="防長交通"
+                                    src="img/bus/icon_28.png"></a>
+                        </div>
+                        <div class="item">
+                            <a href="https://www.city.iwakuni.lg.jp" target="_blank"><img alt="岩国市"
+                                    src="img/bus/icon_32.png"></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.city.etajima.hiroshima.jp/" target="_blank"><img alt="三高タクシー"
+                                    src="img/bus/icon_16.png"></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.iwakuni-bus.com/" target="_blank"><img alt="いわくにバス"
+                                    src="img/bus/icon_18.png"></a>
+                        </div>
+                        <div class="item">
+                            <a href="https://etajimabus.jp" target="_blank"><img alt="江田島バス"
+                                    src="img/bus/icon_21.png"></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.city.etajima.hiroshima.jp/" target="_blank"><img alt="江田島タクシー"
+                                    src="img/bus/icon_24.png"></a>
+                        </div>
+                        <div class="item">
+                            <a href="http://www.city.etajima.hiroshima.jp/" target="_blank"><img alt="能美タクシー"
+                                    src="img/bus/icon_26.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-section slide">
+            <footer>
+                <p>特許登録済・商標登録済</p>
+                <small>&copy; 2015 TOWN CREATION CO.,LTD All Rights Reserved.</small>
+            </footer>
+        </div>
+
+    </div>
 
 </body>
+
 </html>
